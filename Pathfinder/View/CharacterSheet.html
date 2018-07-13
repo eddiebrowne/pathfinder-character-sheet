@@ -1,0 +1,3318 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+
+<head><title>
+
+	Character Sheet
+
+</title>
+<link rel="Stylesheet" type="text/css" href="../Styles/CharacterSheet.css" />
+<link rel="Stylesheet" type="text/css" href="../Styles/themes/steel/jquery-ui-1.8.22.custom.css" />
+<script type="text/javascript" src="../Scripts/Third Party/jQuery/jquery-1.7.2.min.js"></script>
+<script type="text/javascript" src="../Scripts/Third Party/jQuery/jquery-ui-1.8.22.custom.min.js"></script>
+<script type="text/javascript" src="../Scripts/Character.js"></script>
+<script type="text/javascript" src="../Scripts/Class.js"></script>
+<script type="text/javascript" src="../Scripts/Race.js"></script>
+<script type="text/javascript" src="../Scripts/Level.js"></script>
+<script type="text/javascript" src="../Scripts/Statistics.js"></script>
+<script type="text/javascript" src="../Scripts/ClassTable.js"></script>
+<script type="text/javascript" src="../Scripts/Skills.js"></script>
+<script type="text/javascript" src="../Scripts/SkillsTable.js"></script>
+<script type="text/javascript" src="../Scripts/Alignment.js"></script>
+<script type="text/javascript" src="../Scripts/AbilityScore.js"></script>
+<script type="text/javascript" src="../Scripts/CharacterSheet.js"></script>
+<script type="text/javascript" src="../Scripts/Items.js"></script>
+
+</head>
+
+<body>
+
+<form method="post" id="characterSheetForm" action="CharacterSheet.html">
+<div id="characterSheet" class="tab-widget">
+	<ul class="tabnav">
+		<li><a href="#basicInfo">Character Information</a></li>  
+		<li><a href="#abilityScores">Ability Scores</a></li>  
+		<li><a href="#combatStatistics">Combat Statistics</a></li>
+		<li><a href="#skills">Skills</a></li>
+		<li><a href="#equipment">Equipment</a></li>
+	</ul>
+
+    <div id="basicInfo" class="tabdiv">
+		<div id="characterInfo" class="div-table section">
+			<div class="div-tr">
+				<div class="div-td"></div>
+				<div class="div-td"><span class="header">Basic Information</span></div>
+				<div class="div-td"></div>
+			</div>
+
+			<div class="div-tr">
+				<div class="div-td"><label>Player Name:</label><input name="ctl05" type="text" /></div>				
+			</div>
+			<div class="div-tr">
+				<div class="div-td"><label>Character Name:</label> <input name="name" type="text" id="name" /></div>
+					<div class="div-td">
+				        <label>Character Level:</label>
+			        <select name="level" id="level">
+						<option value="0">None</option>
+											<option value="1">1</option>
+						<option value="2">2</option>
+						<option value="3">3</option>
+						<option value="4">4</option>
+						<option value="5">5</option>
+						<option value="6">6</option>
+						<option value="7">7</option>
+						<option value="8">8</option>
+						<option value="9">9</option>
+					</select>
+				</div>
+				<div class="div-td">
+				        <label>Character Class:</label>
+			        <select name="characterClassList" id="characterClassList">
+						<option value=""></option>
+						<option value="Alchemist">Alchemist</option>
+						<option value="Barbarian">Barbarian</option>
+						<option value="Bard">Bard</option>
+						<option value="Cleric">Cleric</option>
+						<option value="Druid">Druid</option>
+						<option value="Fighter">Fighter</option>
+						<option value="Gunslinger">Gunslinger</option>
+						<option value="Monk">Monk</option>
+						<option value="Paladin">Paladin</option>
+						<option value="Ranger">Ranger</option>
+						<option value="Rogue">Rogue</option>
+						<option value="Sorcerer">Sorcerer</option>
+						<option value="Wizard">Wizard</option>
+					</select>
+				</div>				
+			</div>
+			<div class="div-tr">
+				<div class="div-td"><label>Deity:</label> <input name="deity" type="text" id="deity" /></div>
+				<div class="div-td"><label>Homeland:</label> <input name="homeland" type="text" id="homeland" /></div>
+				<div class="div-td" >
+			        <label>Alignment:</label>                 
+					<select name="alignment" id="alignment">
+						<option value=""></option>
+						<option value="Lawful Good">Lawful Good</option>
+						<option value="Lawful Neutral">Lawful Neutral</option>
+						<option value="Lawful Evil">Lawful Evil</option>
+						<option value="Neutral Good">Neutral Good</option>
+						<option value="True Neutral">True Neutral</option>
+						<option value="Neutral Evil">Neutral Evil</option>
+						<option value="Chaotic Good">Chaotic Good</option>
+						<option value="Chaotic Neutral">Chaotic Neutral</option>
+						<option value="Chaotic Evil">Chaotic Evil</option>
+					</select>
+				</div>
+			</div>
+
+			<div class="div-tr">
+				<div class="div-td"></div>
+				<div class="div-td"><span class="header">Appearance</span></div>
+				<div class="div-td"></div>
+			</div>
+			<div class="div-tr">
+				<div class="div-td"><label>Race:</label> 
+			        <select name="characterRace" id="characterRace">
+						<option value=""></option>
+						<option value="Dwarf">Dwarf</option>
+						<option value="Elf">Elf</option>
+						<option value="Gnome">Gnome</option>
+						<option value="Half-Elf">Half-Elf</option>
+						<option value="Half-Orc">Half-Orc</option>
+						<option value="Halfling">Halfling</option>
+						<option value="Human">Human</option>
+					</select>
+				</div>
+				<div class="div-td"><label>Size:</label> <input name="characterSize" type="text" id="characterSize" class="largeBox readonly" /></div>
+				<div class="div-td">
+				        <label>Gender:</label> 
+					<select name="gender" id="gender">
+						<option value="Male">Male</option>
+						<option value="Female">Female</option>
+					</select>
+				</div>
+			</div>
+			<div class="div-tr">
+				<div class="div-td"><label>Age:</label> <input name="age" type="text" id="age" style="width:30px;" /></div>
+				<div class="div-td"><label>Height:</label> <input name="height" type="text" id="height" style="width:50px;" /></div>
+				<div class="div-td"><label>Weight:</label> <input name="weight" type="text" id="weight" style="width:50px;" /></div>
+			</div>
+			<div class="div-tr">
+				<div class="div-td"><label>Hair:</label> <input name="hair" type="text" id="hair" style="width:50px;" /></div>
+				<div class="div-td"><label>Eyes:</label> <input name="eyes" type="text" id="eyes" style="width:50px;" /></div>
+			</div>
+		</div><!--/divtable-->
+    </div>
+
+    <div id="abilityScores" class="tabdiv">
+    
+		<div class="divTable">
+			<div class="div-tr section">
+			    <div class="div-td" >
+			    Campaign Type:
+			        <select id="campaignType">
+			            <option value="low">Low Fantasy</option>
+			            <option value="standard">Standard Fantasy</option>
+			            <option value="high">High Fantasy</option>
+			            <option value="epic">Epic Fantasy</option>
+			        </select>
+			    </div>
+			    <div class="div-td" style="width:100px;"></div>
+			    <div class="div-td"> 
+			        Points Remaining:
+					<input id="abilityPurchasePoints" type="text" class="readonly smallBox" value="10"/>
+			    </div>
+			</div>
+		</div>
+
+		<table class="section">
+
+		<tr>
+			<td><table id="characterAbilities">
+
+				<tr>
+
+					<th colspan="5">
+
+			            Character Ability Scores
+
+			        </th>
+
+				</tr>
+				<tr align="center">
+					<th>Ability Name</th>
+					<th class="columnHead">
+			            Ability <br /> Score
+			        </th>
+					<th class="columnHead">
+			            Ability <br /> Modifier
+			        </th>
+					<th class="columnHead">
+			            Temporary <br /> Adjustment
+			        </th>
+					<th class="columnHead">
+			            Temporary <br /> Modifier
+			        </th>
+				</tr>
+				<tr align="center">
+					<td class="label">
+			            STR <br /> (Strength)
+			        </td><td class="score"><input name="strScore" type="text" value="10" id="strScore" class="smallBox readonly" /><img id="strUpBttn" class="upScoreBttn upBttn udBttn" src="../Images/upButton.jpg" alt="up" /><img id="strDownBttn" class="downScoreBttn downBttn udBttn" src="../Images/downButton.jpg" alt="down" /></td><td><input name="strMod" type="text" value="0" id="strMod" class="smallBox readonly" /></td><td><input name="strAdj" type="text" value="0" id="strAdj" class="smallBox readonly" /><img id="strUpAdjBttn" class="upAdjBttn upBttn udBttn" src="../Images/upButton.jpg" alt="up" /><img id="strDownpAdjBttn" class="downAdjBttn downBttn udBttn" src="../Images/downButton.jpg" alt="down" /></td><td><input name="ctl07" type="text" value="0" class="strAdjMod smallBox readonly" /></td>
+
+				</tr><tr align="center">
+
+					<td class="label">
+
+			            DEX <br /> (Dexterity)
+
+			        </td><td class="score"><input name="dexScore" type="text" value="10" id="dexScore" class="smallBox readonly" /><img id="dexUpBttn" class="upScoreBttn upBttn udBttn" src="../Images/upButton.jpg" alt="up" /><img id="dexDownBttn" class="downScoreBttn downBttn udBttn" src="../Images/downButton.jpg" alt="down" /></td><td><input name="dexMod" type="text" value="0" id="dexMod" class="smallBox readonly" /></td><td><input name="dexAdj" type="text" value="0" id="dexAdj" class="smallBox readonly" /><img id="dexUpAdjBttn" class="upAdjBttn upBttn udBttn" src="../Images/upButton.jpg" alt="up" /><img id="dexDownpAdjBttn" class="downAdjBttn downBttn udBttn" src="../Images/downButton.jpg" alt="down" /></td><td><input name="ctl08" type="text" value="0" class="dexAdjMod smallBox readonly" /></td>
+
+				</tr><tr align="center">
+
+					<td class="label">
+
+			            CON <br /> (Constitution)
+
+			        </td><td class="score"><input name="conScore" type="text" value="10" id="conScore" class="smallBox readonly" /><img id="conUpBttn" class="upScoreBttn upBttn udBttn" src="../Images/upButton.jpg" alt="up" /><img id="conDownBttn" class="downScoreBttn downBttn udBttn" src="../Images/downButton.jpg" alt="down" /></td><td><input name="conMod" type="text" value="0" id="conMod" class="smallBox readonly" /></td><td><input name="conAdj" type="text" value="0" id="conAdj" class="smallBox readonly" /><img id="conUpAdjBttn" class="upAdjBttn upBttn udBttn" src="../Images/upButton.jpg" alt="up" /><img id="conDownpAdjBttn" class="downAdjBttn downBttn udBttn" src="../Images/downButton.jpg" alt="down" /></td><td><input name="ctl09" type="text" value="0" class="conAdjMod smallBox readonly" /></td>
+
+				</tr><tr align="center">
+
+					<td class="label">
+
+			            INT <br /> (Intelligence)
+
+			        </td><td class="score"><input name="intScore" type="text" value="10" id="intScore" class="smallBox readonly" /><img id="intUpBttn" class="upScoreBttn upBttn udBttn" src="../Images/upButton.jpg" alt="up" /><img id="intDownBttn" class="downScoreBttn downBttn udBttn" src="../Images/downButton.jpg" alt="down" /></td><td><input name="intMod" type="text" value="0" id="intMod" class="smallBox readonly" /></td><td><input name="intAdj" type="text" value="0" id="intAdj" class="smallBox readonly" /><img id="intUpAdjBttn" class="upAdjBttn upBttn udBttn" src="../Images/upButton.jpg" alt="up" /><img id="intDownpAdjBttn" class="downAdjBttn downBttn udBttn" src="../Images/downButton.jpg" alt="down" /></td><td><input name="ctl10" type="text" value="0" class="intAdjMod smallBox readonly" /></td>
+
+				</tr><tr align="center">
+
+					<td class="label">
+
+			            WIS <br /> (Wisdom)
+
+			        </td><td class="score"><input name="wisScore" type="text" value="10" id="wisScore" class="smallBox readonly" /><img id="wisUpBttn" class="upScoreBttn upBttn udBttn" src="../Images/upButton.jpg" alt="up" /><img id="wisDownBttn" class="downScoreBttn downBttn udBttn" src="../Images/downButton.jpg" alt="down" /></td><td><input name="wisMod" type="text" value="0" id="wisMod" class="smallBox readonly" /></td><td><input name="wisAdj" type="text" value="0" id="wisAdj" class="smallBox readonly" /><img id="wisUpAdjBttn" class="upAdjBttn upBttn udBttn" src="../Images/upButton.jpg" alt="up" /><img id="wisDownpAdjBttn" class="downAdjBttn downBttn udBttn" src="../Images/downButton.jpg" alt="down" /></td><td><input name="ctl11" type="text" value="0" class="wisAdjMod smallBox readonly" /></td>
+
+				</tr><tr align="center">
+
+					<td class="label">
+
+			            CHA <br /> (Charisma)
+
+			        </td><td class="score"><input name="chaScore" type="text" value="10" id="chaScore" class="smallBox readonly" /><img id="chaUpBttn" class="upScoreBttn upBttn udBttn" src="../Images/upButton.jpg" alt="up" /><img id="chaDownBttn" class="downScoreBttn downBttn udBttn" src="../Images/downButton.jpg" alt="down" /></td><td><input name="chaMod" type="text" value="0" id="chaMod" class="smallBox readonly" /></td><td><input name="chaAdj" type="text" value="0" id="chaAdj" class="smallBox readonly" /><img id="chaUpAdjBttn" class="upAdjBttn upBttn udBttn" src="../Images/upButton.jpg" alt="up" /><img id="chaDownpAdjBttn" class="downAdjBttn downBttn udBttn" src="../Images/downButton.jpg" alt="down" /></td><td><input name="chaAdjMod" type="text" value="0" id="chaAdjMod" class="chaAdjMod smallBox readonly" /></td>
+						</tr>
+					</table>
+				</td>
+				<td>
+					<div id="raceBonusDialog" class="hidden">
+							        Select Ability Bonus:
+						<table id="raceBonusList">
+							<tr><td><input id="raceBonusList_0" type="radio" name="raceBonusList" value="str" checked="checked" /><label for="raceBonusList_0">Strength</label></td></tr>
+							<tr><td><input id="raceBonusList_1" type="radio" name="raceBonusList" value="dex" /><label for="raceBonusList_1">Dexterity</label></td></tr>
+							<tr><td><input id="raceBonusList_2" type="radio" name="raceBonusList" value="con" /><label for="raceBonusList_2">Constitution</label></td></tr>
+							<tr><td><input id="raceBonusList_3" type="radio" name="raceBonusList" value="int" /><label for="raceBonusList_3">Intelligence</label></td></tr>
+							<tr><td><input id="raceBonusList_4" type="radio" name="raceBonusList" value="wis" /><label for="raceBonusList_4">Wisdom</label></td></tr>
+							<tr><td><input id="raceBonusList_5" type="radio" name="raceBonusList" value="cha" /><label for="raceBonusList_5">Charisma</label></td></tr>
+						</table>
+					</div>
+				</td>
+			</tr>
+		</table>
+
+    </div> <!--/abilityScores-->
+
+
+<div id="combatStatistics" class="tabdiv">
+    <div class="initiative">
+
+        <table id="initTable" class="section">
+			<tr align="center" valign="top">
+				<td class="label">
+                    Initiative <br /> Modifier
+                </td>
+				<td><input name="initTotal" type="text" value="0" id="initTotal" class="smallBox readonly" />
+                    <br />
+                    TOTAL
+                </td><td>
+                    =
+                </td><td><input name="initDexMod" type="text" value="0" id="initDexMod" class="dexMod init smallBox readonly" />
+                    <br />
+                    Dex <br /> Modifier
+                </td><td>
+                    +
+                </td><td><input name="initMiscMod" type="text" value="0" id="initMiscMod" class="init smallBox readonly" />
+                    <br />
+                    Misc <br /> Modifier
+                </td>
+			</tr>
+		</table>
+    </div>
+    <div class="armorClass">
+		<table id="ACTable" class="section">
+			<tr align="center">
+				<td class="label">
+				            Touch <br /> Armor Class
+				        </td><td><input name="touchAC" type="text" value="10" id="touchAC" class="smallBox readonly" /></td>
+				<td></td>
+				<td></td>
+				<td></td>
+				<td class="label" colspan="4">
+				            Flat-Footed <br /> Armor Class
+				        </td><td><input name="ffAC" type="text" value="10" id="ffAC" class="smallBox readonly" /></td>
+			</tr>
+			<tr align="center" valign="top">
+				<td class="label">
+		            AC
+		            <br />
+		            Armor Class
+		        </td><td><input name="acTotal" type="text" value="10" id="acTotal" class="smallBox readonly" />
+		            <br />
+		            TOTAL
+		        </td><td>
+		            =
+		        </td><td>
+		            10
+		        </td><td>
+		            +
+		        </td><td><input name="armorBonus" type="text" value="0" id="armorBonus" class="ac smallBox readonly" />
+		            <br />
+		            Armor <br /> Bonus
+		        </td><td>
+		            +
+		        </td><td><input name="shieldBonus" type="text" value="0" id="shieldBonus" class="ac smallBox readonly" />
+		            <br />
+		            Shield <br /> Bonus
+		        </td><td>
+		            +
+		        </td><td><input name="acDexMod" type="text" value="0" id="acDexMod" class="dexMod ac smallBox readonly" />
+		            <br />
+		            Dex <br /> Modifier
+		        </td><td>
+		            +
+		        </td><td><input name="acSizeMod" type="text" value="0" id="acSizeMod" class="ac sizeMod smallBox readonly" />
+		            <br />
+		            Size <br /> Modifier
+		        </td><td>
+		            +
+		        </td><td><input name="acNatArmor" type="text" value="0" id="acNatArmor" class="ac smallBox readonly" />
+		            <br />
+		            Natural <br /> Armor
+		        </td><td>
+		            +
+		        </td><td><input name="acDefMod" type="text" value="0" id="acDefMod" class="ac smallBox readonly" />
+		            <br />
+		            Deflection <br /> Modifier
+		        </td><td>
+		            +
+		        </td><td><input name="acMiscMod" type="text" value="0" id="acMiscMod" class="ac smallBox readonly" />
+		            <br />
+		            Misc <br /> Modifier
+		        </td>
+			</tr>
+		</table>
+    </div>
+
+    <div class="savingThrows">
+
+        <table class="section">
+
+	<tr align="center">
+
+		<th colspan="12">
+
+                    Saving Throws
+
+                </th>
+
+	</tr><tr align="center">
+
+		<th></th><th class="columnHead">
+
+                    TOTAL
+
+                </th><th></th><th class="columnHead">
+
+                    Base <br /> Save
+
+                </th><th></th><th class="columnHead">
+
+                    Ability <br /> Modifier
+
+                </th><th></th><th class="columnHead">
+
+                    Magic <br /> Modifier
+
+                </th><th></th><th class="columnHead">
+
+                    Misc <br /> Modifier
+
+                </th><th></th><th class="columnHead">
+
+                    Temporary <br /> Modifier
+
+                </th>
+
+	</tr>
+	<tr align="center">
+		<td class="label">
+
+	                Fortitude
+
+	                <br />
+
+	                (Constitution)
+
+        </td>
+		<td><input name="fortTotal" type="text" value="0" id="fortTotal" class="smallBox readonly" /></td>
+		<td> = </td>
+		<td><input name="fortBase" type="text" value="0" id="fortBase" class="fort smallBox readonly" /></td>
+		<td> + </td>
+		<td><input name="fortAbMod" type="text" value="0" id="fortAbMod" class="conMod fort smallBox readonly" /></td>
+		<td> + </td>
+		<td><input name="fortMagMod" type="text" value="0" id="fortMagMod" class="fort smallBox readonly" /></td>
+		<td> + </td>
+		<td><input name="fortMiscMod" type="text" value="0" id="fortMiscMod" class="fort smallBox readonly" /></td>
+		<td> + </td>
+		<td><input name="fortTempMod" type="text" value="0" id="fortTempMod" class="fort smallBox readonly" /></td>
+	</tr>
+	<tr align="center">
+		<td class="label">
+
+                    Reflex
+
+                    <br />
+
+                    (Dexterity)
+
+                </td><td><input name="refTotal" type="text" value="0" id="refTotal" class="smallBox readonly" /></td><td>
+
+                    =
+
+                </td><td><input name="refBase" type="text" value="0" id="refBase" class="ref smallBox readonly" /></td><td>
+
+                    +
+
+                </td><td><input name="refAbMod" type="text" value="0" id="refAbMod" class="dexMod ref smallBox readonly" /></td><td>
+
+                    +
+
+                </td><td><input name="refMagMod" type="text" value="0" id="refMagMod" class="ref smallBox readonly" /></td><td>
+
+                    +
+
+                </td><td><input name="refMiscMod" type="text" value="0" id="refMiscMod" class="ref smallBox readonly" /></td><td>
+
+                    +
+
+                </td><td><input name="refTempMod" type="text" value="0" id="refTempMod" class="ref smallBox readonly" /></td>
+
+	</tr><tr align="center">
+
+		<td class="label">
+
+                    Will
+
+                    <br />
+
+                    (Wisdom)
+
+                </td><td><input name="willTotal" type="text" value="0" id="willTotal" class="smallBox readonly" /></td><td>
+
+                    =
+
+                </td><td><input name="willBase" type="text" value="0" id="willBase" class="will smallBox readonly" /></td><td>
+
+                    +
+
+                </td><td><input name="willAbMod" type="text" value="0" id="willAbMod" class="wisMod will smallBox readonly" /></td><td>
+
+                    +
+
+                </td><td><input name="willMagMod" type="text" value="0" id="willMagMod" class="will smallBox readonly" /></td><td>
+
+                    +
+
+                </td><td><input name="willMiscMod" type="text" value="0" id="willMiscMod" class="will smallBox readonly" /></td><td>
+
+                    +
+
+                </td><td><input name="willTempMod" type="text" value="0" id="willTempMod" class="will smallBox readonly" /></td>
+
+	</tr>
+
+</table>
+
+    </div>
+
+ 
+
+    <div class="combat">
+
+        <table class="section">
+
+	<tr>
+
+		<th colspan="4">
+
+                    Combat
+
+                </th>
+
+	</tr><tr>
+
+		<td>
+
+                    <div class="label attack">
+
+                        Base Attack Bonus
+
+                    </div>
+
+                </td><td><input name="baseAttackBonus" type="text" value="0" id="baseAttackBonus" class="baseAttack smallBox readonly" /></td><td class="label">
+
+                    Spell <br /> Resistance
+
+                </td><td><input name="spellResist" type="text" id="spellResist" class="smallBox readonly" /></td>
+
+	</tr>
+
+</table>
+
+            <table class="section">
+
+	<tr align="center" valign="top">
+
+		<td>
+
+                    <div class="label attack">
+
+                        CMB
+
+                    </div>
+
+                </td><td><input name="cmbTotal" type="text" value="0" id="cmbTotal" class="smallBox readonly" />
+
+                    <br />
+
+                    TOTAL
+
+                </td><td>
+
+                    =
+
+                </td><td><input name="cmbBase" type="text" value="0" id="cmbBase" class="cmb baseAttack smallBox readonly" />
+
+                    <br />
+
+                    Base Attack
+
+                    <br />
+
+                    Bonus
+
+                </td><td>
+
+                    +
+
+                </td><td><input name="cmbStrModTB" type="text" value="0" id="cmbStrModTB" class="strMod cmb smallBox readonly" />
+
+                    <br />
+
+                    Strength
+
+                    <br />
+
+                    Modifier
+
+                </td><td>
+
+                    +
+
+                </td><td><input name="cmbSizeMod" type="text" value="0" id="cmbSizeMod" class="sizeMod cmb smallBox readonly" />
+
+                    <br />
+
+                    Size
+
+                    <br />
+
+                    Modifier
+
+                </td>
+
+	</tr><tr align="center" valign="top">
+
+		<td>
+
+                    <div class="label attack">
+
+                        CMD
+
+                    </div>
+
+                </td><td><input name="cmdTotal" type="text" value="10" id="cmdTotal" class="smallBox readonly" />
+
+                    <br />
+
+                    TOTAL
+
+                </td><td>
+
+                    =
+
+                </td><td><input name="cmdBase" type="text" value="0" id="cmdBase" class="cmd baseAttack smallBox readonly" />
+
+                    <br />
+
+                    Base Attack
+
+                    <br />
+
+                    Bonus
+
+                </td><td>
+
+                    +
+
+                </td><td><input name="cmdStrMod" type="text" value="0" id="cmdStrMod" class="strMod cmd smallBox readonly" />
+
+                    <br />
+
+                    Strength
+
+                    <br />
+
+                    Modifier
+
+                </td><td>
+
+                    +
+
+                </td><td><input name="cmdDexMod" type="text" value="0" id="cmdDexMod" class="dexMod cmd smallBox readonly" />
+
+                    <br />
+
+                    Dexterity
+
+                    <br />
+
+                    Modifier
+
+                </td><td>
+
+                    +
+
+                </td><td><input name="cmdSizeMod" type="text" value="0" id="cmdSizeMod" class="sizeMod cmd smallBox readonly" />
+
+                    <br />
+
+                    Size
+
+                    <br />
+
+                    Modifier
+
+                </td><td>
+
+                    +
+
+                </td><td>
+
+                    10
+
+                </td>
+
+	</tr>
+
+</table>
+
+    </div>
+
+
+
+    <div class="speed">
+
+        <table class="section">
+
+	<tr class="borderless">
+
+		<td class="label spLabel" colspan="2" rowspan="2">
+
+                    Speed                    
+
+                </td><td><input name="ctl16" type="text" class="mediumBox readonly" />
+
+                    <br />
+
+                    <div class="spUnit">FT.</div>
+
+                </td><td><input name="ctl17" type="text" class="mediumBox readonly" />
+
+                    <br />
+
+                    <div class="spUnit">SQ.</div>
+
+                </td><td><input name="ctl18" type="text" class="mediumBox readonly" />
+
+                    <br />
+
+                    <div class="spUnit">FT.</div>
+
+                </td><td><input name="ctl19" type="text" class="mediumBox readonly" />                    
+
+                    <br />
+
+                    <div class="spUnit">SQ.</div>
+
+                </td>
+
+	</tr><tr>
+
+		<td align="center" colspan="2">
+
+                    Base Speed
+
+                </td><td align="center" colspan="2">
+
+                    With Armor
+
+                </td>
+
+	</tr><tr class="borderless">
+
+		<td><input name="ctl20" type="text" class="mediumBox readonly" />
+
+                    <br />
+
+                    <span class="spUnit">FT.</span>                                        
+
+                </td><td align="left"><input name="ctl21" type="text" class="extraLargeBox readonly" />
+
+                    <br />
+
+                    <span class="spUnit">MANEUVERABILITY</span>
+
+                </td>
+				<td><input name="ctl22" type="text" class="mediumBox readonly" />
+
+                    <br />
+
+                    <span class="spUnit">FT.</span>
+
+                </td><td><input name="ctl23" type="text" class="mediumBox readonly" />
+
+                    <br />
+
+                    <span class="spUnit">FT.</span>
+
+                </td><td><input name="ctl24" type="text" class="mediumBox readonly" />
+
+                    <br />
+
+                    <span class="spUnit">FT.</span>
+
+                </td>
+
+	</tr><tr class="borderless">
+
+		<td align="center" colspan="2">
+
+                    <div class="">Fly</div>                    
+
+                </td>
+				<td align="center">
+
+                    <div class="">Swim</div>
+
+                </td><td align="center">
+
+                    <div class="">Climb</div>
+
+                </td><td align="center">
+
+                    <div class="">Burrow</div>
+
+                </td>
+
+	</tr>
+
+</table>
+
+    </div>
+</div><!--/combatStats-->
+
+
+    <div id="skills" class="tabdiv">
+
+        <table id="skillList">
+
+	<tr class="nohighlight">
+
+		<th class="label" colspan="10">
+
+                    Skills
+
+                </th>
+
+	</tr><tr class="nohighlight">
+
+		<td colspan="3" class="section">
+
+                    Remaining Skill Points:
+
+                        <input name="skillPoints" type="text" value="0" id="skillPoints" class="smallBox" /></td>
+
+		<td colspan="5"></td>
+		<td colspan="2">* Trained Only</td>
+	</tr><tr class="nohighlight">
+		<th></th>
+		<th></th>
+		<th>Skill Name</th>
+		<th>Total <br />Bonus</th>
+		<th></th>
+		<th>Ability <br /> Modifier</th>
+		<th></th>
+		<th>Ranks</th>
+		<th></th>
+		<th>Misc. <br /> Mod.</th>
+	</tr>
+	<tr class="section">
+		<td><input id="ctl25" type="checkbox" name="ctl25" /></td>
+		<td></td>
+		<td>Acrobatics</td>
+		<td align="center">
+			<input name="ctl26" type="text" class="smallBox readonly totalBonus" />
+		</td>
+		<td>=DEX</td>
+		<td align="center">
+			<input name="ctl27" type="text" class="smallBox readonly dexMod" />
+		</td>
+		<td>+</td>
+		<td>
+			<input name="ctl28" type="text" class="smallBox readonly" /><img class="udBttn upRankBttn upBttn" src="../Images/upButton.jpg" alt="up" /><img class="udBttn downRankBttn downBttn" src="../Images/downButton.jpg" alt="down" />
+		</td>
+		<td>+</td>
+		<td align="center">
+			<input name="ctl31" type="text" class="smallBox readonly" />
+		</td>
+	</tr>
+	<tr>
+		<td>
+			<input id="ctl32" type="checkbox" name="ctl32" />
+		</td>
+		<td></td>
+		<td>Appraise</td>
+		<td align="center">
+			<input name="ctl33" type="text" class="smallBox readonly totalBonus" />
+		</td>
+		<td>=INT</td>
+		<td align="center">
+			<input name="ctl34" type="text" class="smallBox readonly intMod" />
+		</td>
+		<td>+</td>
+		<td>
+			<input name="ctl35" type="text" class="smallBox readonly" /><img class="udBttn upRankBttn upBttn" src="../Images/upButton.jpg" alt="up" /><img class="udBttn downRankBttn downBttn" src="../Images/downButton.jpg" alt="down" />
+		</td>
+		<td>+</td>
+		<td align="center">
+			<input name="ctl38" type="text" class="smallBox readonly" />
+		</td>
+	</tr>
+	<tr>
+		<td>
+			<input id="ctl39" type="checkbox" name="ctl39" />
+		</td>
+		<td></td>
+		<td>Bluff</td>
+		<td align="center">
+			<input name="ctl40" type="text" class="smallBox readonly totalBonus" />
+		</td>
+		<td>=CHA</td>
+		<td align="center">
+			<input name="ctl41" type="text" class="smallBox readonly chaMod" />
+		</td>
+		<td>+</td>
+		<td>
+			<input name="ctl42" type="text" class="smallBox readonly" /><img class="udBttn upRankBttn upBttn" src="../Images/upButton.jpg" alt="up" /><img class="udBttn downRankBttn downBttn" src="../Images/downButton.jpg" alt="down" />
+		</td>
+		<td>+</td>
+		<td align="center">
+			<input name="ctl45" type="text" class="smallBox readonly" />
+		</td>
+	</tr>
+	<tr>
+		<td>
+			<input id="ctl46" type="checkbox" name="ctl46" /></td><td></td><td>Climb</td><td align="center"><input name="ctl47" type="text" class="smallBox readonly totalBonus" /></td><td>=STR</td><td align="center"><input name="ctl48" type="text" class="smallBox readonly strMod" /></td><td>+</td><td><input name="ctl49" type="text" class="smallBox readonly" /><img class="udBttn upRankBttn upBttn" src="../Images/upButton.jpg" alt="up" /><img class="udBttn downRankBttn downBttn" src="../Images/downButton.jpg" alt="down" /></td><td>+</td><td align="center"><input name="ctl52" type="text" class="smallBox readonly" /></td>
+
+	</tr><tr>
+
+		<td><input id="ctl53" type="checkbox" name="ctl53" /></td><td></td><td>Craft</td><td align="center"><input name="ctl54" type="text" class="smallBox readonly totalBonus" /></td><td>=INT</td><td align="center"><input name="ctl55" type="text" class="smallBox readonly intMod" /></td><td>+</td><td><input name="ctl56" type="text" class="smallBox readonly" /><img class="udBttn upRankBttn upBttn" src="../Images/upButton.jpg" alt="up" /><img class="udBttn downRankBttn downBttn" src="../Images/downButton.jpg" alt="down" /></td><td>+</td><td align="center"><input name="ctl59" type="text" class="smallBox readonly" /></td>
+
+	</tr><tr>
+
+		<td><input id="ctl60" type="checkbox" name="ctl60" /></td><td></td><td>Diplomacy</td><td align="center"><input name="ctl61" type="text" class="smallBox readonly totalBonus" /></td><td>=CHA</td><td align="center"><input name="ctl62" type="text" class="smallBox readonly chaMod" /></td><td>+</td><td><input name="ctl63" type="text" class="smallBox readonly" /><img class="udBttn upRankBttn upBttn" src="../Images/upButton.jpg" alt="up" /><img class="udBttn downRankBttn downBttn" src="../Images/downButton.jpg" alt="down" /></td><td>+</td><td align="center"><input name="ctl66" type="text" class="smallBox readonly" /></td>
+
+
+	</tr><tr>
+
+		<td><input id="ctl67" type="checkbox" name="ctl67" /></td><td>*</td><td>Disable Device</td><td align="center"><input name="ctl68" type="text" class="smallBox readonly totalBonus" /></td><td>=DEX</td><td align="center"><input name="ctl69" type="text" class="smallBox readonly dexMod" /></td><td>+</td><td><input name="ctl70" type="text" class="smallBox readonly" /><img class="udBttn upRankBttn upBttn" src="../Images/upButton.jpg" alt="up" /><img class="udBttn downRankBttn downBttn" src="../Images/downButton.jpg" alt="down" /></td><td>+</td><td align="center"><input name="ctl73" type="text" class="smallBox readonly" /></td>
+
+	</tr><tr>
+
+		<td><input id="ctl74" type="checkbox" name="ctl74" /></td><td></td><td>Disguise</td><td align="center"><input name="ctl75" type="text" class="smallBox readonly totalBonus" /></td><td>=CHA</td><td align="center"><input name="ctl76" type="text" class="smallBox readonly chaMod" /></td><td>+</td><td><input name="ctl77" type="text" class="smallBox readonly" /><img class="udBttn upRankBttn upBttn" src="../Images/upButton.jpg" alt="up" /><img class="udBttn downRankBttn downBttn" src="../Images/downButton.jpg" alt="down" /></td><td>+</td><td align="center"><input name="ctl80" type="text" class="smallBox readonly" /></td>
+
+	</tr><tr>
+
+		<td><input id="ctl81" type="checkbox" name="ctl81" /></td><td></td><td>Escape Artist</td><td align="center"><input name="ctl82" type="text" class="smallBox readonly totalBonus" /></td><td>=DEX</td><td align="center"><input name="ctl83" type="text" class="smallBox readonly dexMod" /></td><td>+</td><td><input name="ctl84" type="text" class="smallBox readonly" /><img class="udBttn upRankBttn upBttn" src="../Images/upButton.jpg" alt="up" /><img class="udBttn downRankBttn downBttn" src="../Images/downButton.jpg" alt="down" /></td><td>+</td><td align="center"><input name="ctl87" type="text" class="smallBox readonly" /></td>
+
+	</tr><tr>
+
+		<td><input id="ctl88" type="checkbox" name="ctl88" /></td><td></td><td>Fly</td><td align="center"><input name="ctl89" type="text" class="smallBox readonly totalBonus" /></td><td>=DEX</td><td align="center"><input name="ctl90" type="text" class="smallBox readonly dexMod" /></td><td>+</td><td><input name="ctl91" type="text" class="smallBox readonly" /><img class="udBttn upRankBttn upBttn" src="../Images/upButton.jpg" alt="up" /><img class="udBttn downRankBttn downBttn" src="../Images/downButton.jpg" alt="down" /></td><td>+</td><td align="center"><input name="ctl94" type="text" class="smallBox readonly" /></td>
+
+	</tr><tr>
+
+		<td><input id="ctl95" type="checkbox" name="ctl95" /></td><td>*</td><td>Handle Animal</td><td align="center"><input name="ctl96" type="text" class="smallBox readonly totalBonus" /></td><td>=CHA</td><td align="center"><input name="ctl97" type="text" class="smallBox readonly chaMod" /></td><td>+</td><td><input name="ctl98" type="text" class="smallBox readonly" /><img class="udBttn upRankBttn upBttn" src="../Images/upButton.jpg" alt="up" /><img class="udBttn downRankBttn downBttn" src="../Images/downButton.jpg" alt="down" /></td><td>+</td><td align="center"><input name="ctl101" type="text" class="smallBox readonly" /></td>
+
+	</tr><tr>
+
+		<td><input id="ctl102" type="checkbox" name="ctl102" /></td><td></td><td>Heal</td><td align="center"><input name="ctl103" type="text" class="smallBox readonly totalBonus" /></td><td>=WIS</td><td align="center"><input name="ctl104" type="text" class="smallBox readonly wisMod" /></td><td>+</td><td><input name="ctl105" type="text" class="smallBox readonly" /><img class="udBttn upRankBttn upBttn" src="../Images/upButton.jpg" alt="up" /><img class="udBttn downRankBttn downBttn" src="../Images/downButton.jpg" alt="down" /></td><td>+</td><td align="center"><input name="ctl108" type="text" class="smallBox readonly" /></td>
+
+	</tr><tr>
+
+		<td><input id="ctl109" type="checkbox" name="ctl109" /></td><td></td><td>Intimidate</td><td align="center"><input name="ctl110" type="text" class="smallBox readonly totalBonus" /></td><td>=CHA</td><td align="center"><input name="ctl111" type="text" class="smallBox readonly chaMod" /></td><td>+</td><td><input name="ctl112" type="text" class="smallBox readonly" /><img class="udBttn upRankBttn upBttn" src="../Images/upButton.jpg" alt="up" /><img class="udBttn downRankBttn downBttn" src="../Images/downButton.jpg" alt="down" /></td><td>+</td><td align="center"><input name="ctl115" type="text" class="smallBox readonly" /></td>
+
+	</tr><tr>
+
+		<td><input id="ctl116" type="checkbox" name="ctl116" /></td><td>*</td><td>Knowledge (arcana)</td><td align="center"><input name="ctl117" type="text" class="smallBox readonly totalBonus" /></td><td>=INT</td><td align="center"><input name="ctl118" type="text" class="smallBox readonly intMod" /></td><td>+</td><td><input name="ctl119" type="text" class="smallBox readonly" /><img class="udBttn upRankBttn upBttn" src="../Images/upButton.jpg" alt="up" /><img class="udBttn downRankBttn downBttn" src="../Images/downButton.jpg" alt="down" /></td><td>+</td><td align="center"><input name="ctl122" type="text" class="smallBox readonly" /></td>
+
+	</tr><tr>
+
+		<td><input id="ctl123" type="checkbox" name="ctl123" /></td><td>*</td><td>Knowledge (dungeoneering)</td><td align="center"><input name="ctl124" type="text" class="smallBox readonly totalBonus" /></td><td>=INT</td><td align="center"><input name="ctl125" type="text" class="smallBox readonly intMod" /></td><td>+</td><td><input name="ctl126" type="text" class="smallBox readonly" /><img class="udBttn upRankBttn upBttn" src="../Images/upButton.jpg" alt="up" /><img class="udBttn downRankBttn downBttn" src="../Images/downButton.jpg" alt="down" /></td><td>+</td><td align="center"><input name="ctl129" type="text" class="smallBox readonly" /></td>
+
+	</tr><tr>
+
+		<td><input id="ctl130" type="checkbox" name="ctl130" /></td><td>*</td><td>Knowledge (engineering)</td><td align="center"><input name="ctl131" type="text" class="smallBox readonly totalBonus" /></td><td>=INT</td><td align="center"><input name="ctl132" type="text" class="smallBox readonly intMod" /></td><td>+</td><td><input name="ctl133" type="text" class="smallBox readonly" /><img class="udBttn upRankBttn upBttn" src="../Images/upButton.jpg" alt="up" /><img class="udBttn downRankBttn downBttn" src="../Images/downButton.jpg" alt="down" /></td><td>+</td><td align="center"><input name="ctl136" type="text" class="smallBox readonly" /></td>
+
+	</tr><tr>
+
+		<td><input id="ctl137" type="checkbox" name="ctl137" /></td><td>*</td><td>Knowledge (geography)</td><td align="center"><input name="ctl138" type="text" class="smallBox readonly totalBonus" /></td><td>=INT</td><td align="center"><input name="ctl139" type="text" class="smallBox readonly intMod" /></td><td>+</td><td><input name="ctl140" type="text" class="smallBox readonly" /><img class="udBttn upRankBttn upBttn" src="../Images/upButton.jpg" alt="up" /><img class="udBttn downRankBttn downBttn" src="../Images/downButton.jpg" alt="down" /></td><td>+</td><td align="center"><input name="ctl143" type="text" class="smallBox readonly" /></td>
+
+	</tr><tr>
+
+		<td><input id="ctl144" type="checkbox" name="ctl144" /></td><td>*</td><td>Knowledge (history)</td><td align="center"><input name="ctl145" type="text" class="smallBox readonly totalBonus" /></td><td>=INT</td><td align="center"><input name="ctl146" type="text" class="smallBox readonly intMod" /></td><td>+</td><td><input name="ctl147" type="text" class="smallBox readonly" /><img class="udBttn upRankBttn upBttn" src="../Images/upButton.jpg" alt="up" /><img class="udBttn downRankBttn downBttn" src="../Images/downButton.jpg" alt="down" /></td><td>+</td><td align="center"><input name="ctl150" type="text" class="smallBox readonly" /></td>
+
+	</tr><tr>
+
+		<td><input id="ctl151" type="checkbox" name="ctl151" /></td><td>*</td><td>Knowledge (local)</td><td align="center"><input name="ctl152" type="text" class="smallBox readonly totalBonus" /></td><td>=INT</td><td align="center"><input name="ctl153" type="text" class="smallBox readonly intMod" /></td><td>+</td><td><input name="ctl154" type="text" class="smallBox readonly" /><img class="udBttn upRankBttn upBttn" src="../Images/upButton.jpg" alt="up" /><img class="udBttn downRankBttn downBttn" src="../Images/downButton.jpg" alt="down" /></td><td>+</td><td align="center"><input name="ctl157" type="text" class="smallBox readonly" /></td>
+
+	</tr><tr>
+
+		<td><input id="ctl158" type="checkbox" name="ctl158" /></td><td>*</td><td>Knowledge (nature)</td><td align="center"><input name="ctl159" type="text" class="smallBox readonly totalBonus" /></td><td>=INT</td><td align="center"><input name="ctl160" type="text" class="smallBox readonly intMod" /></td><td>+</td><td><input name="ctl161" type="text" class="smallBox readonly" /><img class="udBttn upRankBttn upBttn" src="../Images/upButton.jpg" alt="up" /><img class="udBttn downRankBttn downBttn" src="../Images/downButton.jpg" alt="down" /></td><td>+</td><td align="center"><input name="ctl164" type="text" class="smallBox readonly" /></td>
+
+	</tr><tr>
+
+		<td><input id="ctl165" type="checkbox" name="ctl165" /></td><td>*</td><td>Knowledge (nobility)</td><td align="center"><input name="ctl166" type="text" class="smallBox readonly totalBonus" /></td><td>=INT</td><td align="center"><input name="ctl167" type="text" class="smallBox readonly intMod" /></td><td>+</td><td><input name="ctl168" type="text" class="smallBox readonly" /><img class="udBttn upRankBttn upBttn" src="../Images/upButton.jpg" alt="up" /><img class="udBttn downRankBttn downBttn" src="../Images/downButton.jpg" alt="down" /></td><td>+</td><td align="center"><input name="ctl171" type="text" class="smallBox readonly" /></td>
+
+	</tr><tr>
+
+		<td><input id="ctl172" type="checkbox" name="ctl172" /></td><td>*</td><td>Knowledge (planes)</td><td align="center"><input name="ctl173" type="text" class="smallBox readonly totalBonus" /></td><td>=INT</td><td align="center"><input name="ctl174" type="text" class="smallBox readonly intMod" /></td><td>+</td><td><input name="ctl175" type="text" class="smallBox readonly" /><img class="udBttn upRankBttn upBttn" src="../Images/upButton.jpg" alt="up" /><img class="udBttn downRankBttn downBttn" src="../Images/downButton.jpg" alt="down" /></td><td>+</td><td align="center"><input name="ctl178" type="text" class="smallBox readonly" /></td>
+
+	</tr><tr>
+
+		<td><input id="ctl179" type="checkbox" name="ctl179" /></td><td>*</td><td>Knowledge (religion)</td><td align="center"><input name="ctl180" type="text" class="smallBox readonly totalBonus" /></td><td>=INT</td><td align="center"><input name="ctl181" type="text" class="smallBox readonly intMod" /></td><td>+</td><td><input name="ctl182" type="text" class="smallBox readonly" /><img class="udBttn upRankBttn upBttn" src="../Images/upButton.jpg" alt="up" /><img class="udBttn downRankBttn downBttn" src="../Images/downButton.jpg" alt="down" /></td><td>+</td><td align="center"><input name="ctl185" type="text" class="smallBox readonly" /></td>
+
+	</tr><tr>
+
+		<td><input id="ctl186" type="checkbox" name="ctl186" /></td><td>*</td><td>Linguistics</td><td align="center"><input name="ctl187" type="text" class="smallBox readonly totalBonus" /></td><td>=INT</td><td align="center"><input name="ctl188" type="text" class="smallBox readonly intMod" /></td><td>+</td><td><input name="ctl189" type="text" class="smallBox readonly" /><img class="udBttn upRankBttn upBttn" src="../Images/upButton.jpg" alt="up" /><img class="udBttn downRankBttn downBttn" src="../Images/downButton.jpg" alt="down" /></td><td>+</td><td align="center"><input name="ctl192" type="text" class="smallBox readonly" /></td>
+
+	</tr><tr>
+
+		<td><input id="ctl193" type="checkbox" name="ctl193" /></td><td></td><td>Perception</td><td align="center"><input name="ctl194" type="text" class="smallBox readonly totalBonus" /></td><td>=WIS</td><td align="center"><input name="ctl195" type="text" class="smallBox readonly wisMod" /></td><td>+</td><td><input name="ctl196" type="text" class="smallBox readonly" /><img class="udBttn upRankBttn upBttn" src="../Images/upButton.jpg" alt="up" /><img class="udBttn downRankBttn downBttn" src="../Images/downButton.jpg" alt="down" /></td><td>+</td><td align="center"><input name="ctl199" type="text" class="smallBox readonly" /></td>
+
+	</tr><tr>
+
+		<td><input id="ctl200" type="checkbox" name="ctl200" /></td><td></td><td>Perform</td><td align="center"><input name="ctl201" type="text" class="smallBox readonly totalBonus" /></td><td>=CHA</td><td align="center"><input name="ctl202" type="text" class="smallBox readonly chaMod" /></td><td>+</td><td><input name="ctl203" type="text" class="smallBox readonly" /><img class="udBttn upRankBttn upBttn" src="../Images/upButton.jpg" alt="up" /><img class="udBttn downRankBttn downBttn" src="../Images/downButton.jpg" alt="down" /></td><td>+</td><td align="center"><input name="ctl206" type="text" class="smallBox readonly" /></td>
+
+	</tr><tr>
+
+		<td><input id="ctl207" type="checkbox" name="ctl207" /></td><td>*</td><td>Profession</td><td align="center"><input name="ctl208" type="text" class="smallBox readonly totalBonus" /></td><td>=WIS</td><td align="center"><input name="ctl209" type="text" class="smallBox readonly wisMod" /></td><td>+</td><td><input name="ctl210" type="text" class="smallBox readonly" /><img class="udBttn upRankBttn upBttn" src="../Images/upButton.jpg" alt="up" /><img class="udBttn downRankBttn downBttn" src="../Images/downButton.jpg" alt="down" /></td><td>+</td><td align="center"><input name="ctl213" type="text" class="smallBox readonly" /></td>
+
+	</tr><tr>
+
+		<td><input id="ctl214" type="checkbox" name="ctl214" /></td><td></td><td>Ride</td><td align="center"><input name="ctl215" type="text" class="smallBox readonly totalBonus" /></td><td>=DEX</td><td align="center"><input name="ctl216" type="text" class="smallBox readonly dexMod" /></td><td>+</td><td><input name="ctl217" type="text" class="smallBox readonly" /><img class="udBttn upRankBttn upBttn" src="../Images/upButton.jpg" alt="up" /><img class="udBttn downRankBttn downBttn" src="../Images/downButton.jpg" alt="down" /></td><td>+</td><td align="center"><input name="ctl220" type="text" class="smallBox readonly" /></td>
+
+	</tr><tr>
+
+		<td><input id="ctl221" type="checkbox" name="ctl221" /></td><td></td><td>Sense Motive</td><td align="center"><input name="ctl222" type="text" class="smallBox readonly totalBonus" /></td><td>=WIS</td><td align="center"><input name="ctl223" type="text" class="smallBox readonly wisMod" /></td><td>+</td><td><input name="ctl224" type="text" class="smallBox readonly" /><img class="udBttn upRankBttn upBttn" src="../Images/upButton.jpg" alt="up" /><img class="udBttn downRankBttn downBttn" src="../Images/downButton.jpg" alt="down" /></td><td>+</td><td align="center"><input name="ctl227" type="text" class="smallBox readonly" /></td>
+
+	</tr><tr>
+
+		<td><input id="ctl228" type="checkbox" name="ctl228" /></td><td>*</td><td>Sleight of Hand</td><td align="center"><input name="ctl229" type="text" class="smallBox readonly totalBonus" /></td><td>=DEX</td><td align="center"><input name="ctl230" type="text" class="smallBox readonly dexMod" /></td><td>+</td><td><input name="ctl231" type="text" class="smallBox readonly" /><img class="udBttn upRankBttn upBttn" src="../Images/upButton.jpg" alt="up" /><img class="udBttn downRankBttn downBttn" src="../Images/downButton.jpg" alt="down" /></td><td>+</td><td align="center"><input name="ctl234" type="text" class="smallBox readonly" /></td>
+
+	</tr><tr>
+
+		<td><input id="ctl235" type="checkbox" name="ctl235" /></td><td>*</td><td>Spellcraft</td><td align="center"><input name="ctl236" type="text" class="smallBox readonly totalBonus" /></td><td>=INT</td><td align="center"><input name="ctl237" type="text" class="smallBox readonly intMod" /></td><td>+</td><td><input name="ctl238" type="text" class="smallBox readonly" /><img class="udBttn upRankBttn upBttn" src="../Images/upButton.jpg" alt="up" /><img class="udBttn downRankBttn downBttn" src="../Images/downButton.jpg" alt="down" /></td><td>+</td><td align="center"><input name="ctl241" type="text" class="smallBox readonly" /></td>
+
+	</tr><tr>
+
+		<td><input id="ctl242" type="checkbox" name="ctl242" /></td><td></td><td>Stealth</td><td align="center"><input name="ctl243" type="text" class="smallBox readonly totalBonus" /></td><td>=DEX</td><td align="center"><input name="ctl244" type="text" class="smallBox readonly dexMod" /></td><td>+</td><td><input name="ctl245" type="text" class="smallBox readonly" /><img class="udBttn upRankBttn upBttn" src="../Images/upButton.jpg" alt="up" /><img class="udBttn downRankBttn downBttn" src="../Images/downButton.jpg" alt="down" /></td><td>+</td><td align="center"><input name="ctl248" type="text" class="smallBox readonly" /></td>
+
+	</tr><tr>
+
+		<td><input id="ctl249" type="checkbox" name="ctl249" /></td><td></td><td>Survival</td><td align="center"><input name="ctl250" type="text" class="smallBox readonly totalBonus" /></td><td>=WIS</td><td align="center"><input name="ctl251" type="text" class="smallBox readonly wisMod" /></td><td>+</td><td><input name="ctl252" type="text" class="smallBox readonly" /><img class="udBttn upRankBttn upBttn" src="../Images/upButton.jpg" alt="up" /><img class="udBttn downRankBttn downBttn" src="../Images/downButton.jpg" alt="down" /></td><td>+</td><td align="center"><input name="ctl255" type="text" class="smallBox readonly" /></td>
+
+	</tr><tr>
+
+		<td><input id="ctl256" type="checkbox" name="ctl256" /></td><td></td><td>Swim</td><td align="center"><input name="ctl257" type="text" class="smallBox readonly totalBonus" /></td><td>=STR</td><td align="center"><input name="ctl258" type="text" class="smallBox readonly strMod" /></td><td>+</td><td><input name="ctl259" type="text" class="smallBox readonly" /><img class="udBttn upRankBttn upBttn" src="../Images/upButton.jpg" alt="up" /><img class="udBttn downRankBttn downBttn" src="../Images/downButton.jpg" alt="down" /></td><td>+</td><td align="center"><input name="ctl262" type="text" class="smallBox readonly" /></td>
+
+	</tr><tr>
+
+		<td><input id="ctl263" type="checkbox" name="ctl263" /></td><td>*</td><td>Use Magic Device</td><td align="center"><input name="ctl264" type="text" class="smallBox readonly totalBonus" /></td><td>=CHA</td><td align="center"><input name="ctl265" type="text" class="smallBox readonly chaMod" /></td><td>+</td><td><input name="ctl266" type="text" class="smallBox readonly" /><img class="udBttn upRankBttn upBttn" src="../Images/upButton.jpg" alt="up" /><img class="udBttn downRankBttn downBttn" src="../Images/downButton.jpg" alt="down" /></td><td>+</td><td align="center"><input name="ctl269" type="text" class="smallBox readonly" /></td>
+
+	</tr>
+
+</table>
+
+    </div><!--/skills-->
+	<div id="equipment" class="div-table">
+		<div class="div-tr">
+			<table id="purchasedItems">
+				<tr><th colspan="9"><span class="header">Purchased Items</span></th></tr>
+				<tr><th colspan="9" class="headerRow">Weapons</th></tr>
+				<tr class="headerRow"><th id="removeColumn"></th><th>Item</th><th>Damage</th><th>Attack Bonus</th><th>Critical</th><th>Range</th><th>Ammo</th><th>Type</th><th>Weight</th></tr>
+				<tr id="purchasedWeapon" class="hidden"><td></td></tr>
+				<tr><th colspan="9" class="headerRow">Armor</th></tr>
+				<tr class="headerRow"><th></th><th>Item</th><th></th><th></th><th>Bonus</th><th>Check Penalty</th><th>Type</th><th>Spell Failure</th><th>Weight</th></tr>
+				<tr id="purchasedArmor" class="hidden"><td></td></tr>
+				<tr><th colspan="9" class="headerRow">Gear</th></tr>
+				<tr class="headerRow"><th></th><th>Item</th><th></th><th></th><th></th><th></th><th></th><th></th><th>Weight</th></tr>
+				<tr id="purchasedGear" class="hidden"><td></td></tr>
+			</table>
+			<div class="money div-td div-table">
+				<div class="div-tr">
+					<div class="div-td">Platinum: </div><div class="div-td"><span id="platinumpieces">0</span></div>
+				</div>
+				<div class="div-tr">
+					<div class="div-td">Gold: </div><div class="div-td"><span id="goldpieces">0</span></div>
+				</div>
+				<div class="div-tr">
+					<div class="div-td">Silver: </div><div class="div-td"><span id="Silverpieces">0</span></div>
+				</div>
+				<div class="div-tr">
+					<div class="div-td">Copper: </div><div class="div-td"><span id="copperpieces">0</span></div>			
+				</div>
+			</div>
+		</div>
+		<div class="div-tr">
+			<div class="accordion-widget div-td">
+				<h2><a href="#">Weapons</a></h2>
+				<div>
+					<div class="ui-state-active ui-corner-all">
+						<h5 class="ui-accordion-header expandable"><span class="ui-icon ui-icon-triangle-1-e"></span><a href="#">Simple Weapons</a></h5>						
+						<div class="hidden widget-content">
+							<table id="simpleWeaponsTable" class="itemsTable">
+								<tr class="headerRow noHighlight"><th></th><th>Material</th><th>Modifier</th><th>Item</th><th>Cost</th><th>Dmg (S)</th><th>Dmg (M)</th><th>Critical</th><th>Range</th><th>Weight</th><th>Type</th><th class="weaponSpecial">Special</th></tr>
+								<tr><td colspan="12" class="itemType">Unarmed Attacks</td></tr>
+								<tr>
+									<td><span class="addItem weapon"></span></td>
+									<td></td>
+									<td>
+										<select class="itemModifier">
+											<option value="0">None</option>
+											<option value="1">+1</option>
+											<option value="2">+2</option>
+											<option value="3">+3</option>
+											<option value="4">+4</option>
+											<option value="5">+5</option>
+										</select>
+									</td>
+									<td class="itemName">Gauntlet</td><td>2 gp</td><td>1d2</td><td>1d3</td><td>X2</td><td>-</td><td>1 lb.</td><td>B</td><td>-</td>
+								</tr>
+								<tr><td colspan="12" class="itemType">Light Melee Weapons</td></tr>
+								<tr>
+									<td><span class="addItem weapon"></span></td>
+									<td>
+										<select class="itemMaterial">
+											<option value="steel">Steel</option>
+											<option value="Adamantine">Adamantine</option>
+											<option value="Cold Iron">Cold Iron</option>
+											<option value="Silver">Silver</option>
+										</select>
+									</td>
+									<td>
+										<select class="itemModifier">
+											<option value="0">None</option>
+											<option value="1">+1</option>
+											<option value="2">+2</option>
+											<option value="3">+3</option>
+											<option value="4">+4</option>
+											<option value="5">+5</option>
+										</select>
+									</td>
+									<td class="itemName">Dagger</td><td>2 gp</td><td>1d3</td><td>1d4</td><td>19-20/X2</td><td>10 ft.</td><td>1 lb.</td><td>P or S</td><td>-</td>
+								</tr>
+								<tr>
+									<td><span class="addItem weapon"></span></td>
+									<td>
+										<select class="itemMaterial">
+											<option value="steel">Steel</option>
+											<option value="Adamantine">Adamantine</option>
+											<option value="Cold Iron">Cold Iron</option>
+											<option value="Silver">Silver</option>
+										</select>
+									</td>									
+									<td>
+										<select class="itemModifier">
+											<option value="0">None</option>
+											<option value="1">+1</option>
+											<option value="2">+2</option>
+											<option value="3">+3</option>
+											<option value="4">+4</option>
+											<option value="5">+5</option>
+										</select>
+									</td>
+									<td class="itemName">Dagger, punching</td><td>2 gp</td><td>1d3</td><td>1d4 </td><td>X3</td><td>-</td><td>1 lb.</td><td>P</td><td>-</td>
+								</tr>
+								<tr>
+									<td><span class="addItem weapon"></span></td>
+									<td>
+										<select class="itemMaterial">
+											<option value="steel">Steel</option>
+											<option value="Adamantine">Adamantine</option>
+											<option value="Cold Iron">Cold Iron</option>
+											<option value="Silver">Silver</option>
+										</select>
+									</td>
+
+									<td>
+										<select class="itemModifier">
+											<option value="0">None</option>
+											<option value="1">+1</option>
+											<option value="2">+2</option>
+											<option value="3">+3</option>
+											<option value="4">+4</option>
+											<option value="5">+5</option>
+										</select>
+									</td>
+									<td class="itemName">Gauntlet, spiked</td><td>5 gp</td><td>1d3</td><td>1d4</td><td>X2</td><td>-</td><td>1 lb.</td><td>P</td><td>-</td>
+								</tr>
+								<tr>
+									<td><span class="addItem weapon"></span></td>
+									<td>
+										<select class="itemMaterial">
+											<option value="steel">Steel</option>
+											<option value="Adamantine">Adamantine</option>
+											<option value="Cold Iron">Cold Iron</option>
+											<option value="Silver">Silver</option>
+										</select>
+									</td>
+									<td>
+										<select class="itemModifier">
+											<option value="0">None</option>
+											<option value="1">+1</option>
+											<option value="2">+2</option>
+											<option value="3">+3</option>
+											<option value="4">+4</option>
+											<option value="5">+5</option>
+										</select>
+									</td>
+									<td class="itemName">Mace, light</td><td>5 gp</td><td>1d4</td><td>1d6</td><td>X2</td><td>-</td><td>4 lbs.</td><td>B</td><td>-</td>
+								</tr>
+								<tr>
+									<td><span class="addItem weapon"></span></td>
+									<td>
+										<select class="itemMaterial">											
+											<option value="steel">Steel</option>
+											<option value="Adamantine">Adamantine</option>
+											<option value="Cold Iron">Cold Iron</option>
+											<option value="Silver">Silver</option>
+										</select>
+									</td>
+									<td>
+										<select class="itemModifier">
+											<option value="0">None</option>
+											<option value="1">+1</option>
+											<option value="2">+2</option>
+											<option value="3">+3</option>
+											<option value="4">+4</option>
+											<option value="5">+5</option>
+										</select>
+									</td>
+									<td class="itemName">Sickle</td><td>6 gp</td><td>1d4</td><td>1d6</td><td>X2</td><td>-</td><td>2 lbs.</td><td>S</td><td>trip</td>
+								</tr>
+								<tr><td colspan="12" class="itemType">One-Handed Melee Weapons</td>
+								</tr>
+								<tr>
+									<td><span class="addItem weapon"></span></td>
+									<td>
+										<select class="itemMaterial">											
+											<option value="wood">Wood</option>
+											<option value="Adamantine">Darkwood</option>
+											<option value="dragonhide">Dragonhide</option>
+										</select>
+									</td>
+									<td>
+										<select class="itemModifier">
+											<option value="0">None</option>
+											<option value="1">+1</option>
+											<option value="2">+2</option>
+											<option value="3">+3</option>
+											<option value="4">+4</option>
+											<option value="5">+5</option>
+										</select>
+									</td>
+									<td class="itemName">Club</td><td>-</td><td>1d4</td><td>1d6</td><td>X2</td><td>10 ft.</td><td>3 lbs.</td><td>B</td><td>-</td>
+								</tr>
+								<tr>
+									<td><span class="addItem weapon"></span></td>
+									<td>
+										<select class="itemMaterial">											
+											<option value="steel">Steel</option>
+											<option value="Adamantine">Adamantine</option>
+											<option value="Cold Iron">Cold Iron</option>
+											<option value="Silver">Silver</option>
+										</select>
+									</td>
+									<td>
+										<select class="itemModifier">
+											<option value="0">None</option>
+											<option value="1">+1</option>
+											<option value="2">+2</option>
+											<option value="3">+3</option>
+											<option value="4">+4</option>
+											<option value="5">+5</option>
+										</select>
+									</td>
+									<td class="itemName">Mace, heavy</td><td>12 gp</td><td>1d6</td><td>1d8</td><td>X2</td><td>-</td><td>8 lbs.</td><td>B</td><td>-</td>
+								</tr>
+								<tr>
+									<td><span class="addItem weapon"></span></td>
+									<td>
+										<select class="itemMaterial">											
+											<option value="steel">Steel</option>
+											<option value="Adamantine">Adamantine</option>
+											<option value="Cold Iron">Cold Iron</option>
+											<option value="Silver">Silver</option>
+										</select>
+									</td>
+									<td>
+										<select class="itemModifier">
+											<option value="0">None</option>
+											<option value="1">+1</option>
+											<option value="2">+2</option>
+											<option value="3">+3</option>
+											<option value="4">+4</option>
+											<option value="5">+5</option>
+										</select>
+									</td>
+									<td class="itemName">Morningstar</td><td>8 gp</td><td>1d6</td><td>1d8</td><td>X2</td><td>-</td><td>6 lbs.</td><td>B and P</td><td>-</td>
+								</tr>
+								<tr>
+									<td><span class="addItem weapon"></span></td>
+									<td>
+										<select class="itemMaterial">
+											<option value="steel">Steel</option>
+											<option value="Adamantine">Adamantine</option>
+											<option value="Cold Iron">Cold Iron</option>
+											<option value="Silver">Silver</option>
+										</select>
+									</td>
+									<td>
+										<select class="itemModifier">
+											<option value="0">None</option>
+											<option value="1">+1</option>
+											<option value="2">+2</option>
+											<option value="3">+3</option>
+											<option value="4">+4</option>
+											<option value="5">+5</option>
+										</select>
+									</td>
+									<td class="itemName">Shortspear</td><td>1 gp</td><td>1d4</td><td>1d6</td><td>X2</td><td>20 ft.</td><td>3 lbs.</td><td>P</td><td>-</td>
+								</tr>
+								<tr><td colspan="12" class="itemType">Two-Handed Melee Weapons</td></tr>
+								<tr>
+									<td><span class="addItem weapon"></span></td>
+									<td>
+										<select class="itemMaterial">
+											<option value="steel">Steel</option>
+											<option value="Adamantine">Adamantine</option>
+											<option value="Cold Iron">Cold Iron</option>
+											<option value="Silver">Silver</option>
+										</select>
+									</td>
+									<td>
+										<select class="itemModifier">
+											<option value="0">None</option>
+											<option value="1">+1</option>
+											<option value="2">+2</option>
+											<option value="3">+3</option>
+											<option value="4">+4</option>
+											<option value="5">+5</option>
+										</select>
+									</td>
+									<td class="itemName">Longspear</td><td>5 gp</td><td>1d6</td><td>1d8</td><td>X3</td><td>-</td><td>9 lbs.</td><td>P</td><td>brace, reach</td>
+								</tr>
+								<tr>
+									<td><span class="addItem weapon"></span></td>
+									<td>
+										<select class="itemMaterial">
+											<option value="wood">Wood</option>
+											<option value="Adamantine">Darkwood</option>
+										</select>
+									</td>
+									<td>
+										<select class="itemModifier">
+											<option value="0">None</option>
+											<option value="1">+1</option>
+											<option value="2">+2</option>
+											<option value="3">+3</option>
+											<option value="4">+4</option>
+											<option value="5">+5</option>
+										</select>
+									</td>
+									<td class="itemName">Quarterstaff</td><td>-</td><td>1d4/1d4</td><td>1d6/1d6</td><td>X2</td><td>-</td><td>4 lbs.</td><td>B</td><td>double, monk</td>
+								</tr>
+								<tr>
+									<td><span class="addItem weapon"></span></td>
+									<td>
+										<select class="itemMaterial">
+											<option value="steel">Steel</option>
+											<option value="Adamantine">Adamantine</option>
+											<option value="Cold Iron">Cold Iron</option>
+											<option value="Silver">Silver</option>
+										</select>
+									</td>
+									<td>
+										<select class="itemModifier">
+											<option value="0">None</option>
+											<option value="1">+1</option>
+											<option value="2">+2</option>
+											<option value="3">+3</option>
+											<option value="4">+4</option>
+											<option value="5">+5</option>
+										</select>
+									</td>
+									<td class="itemName">Spear</td><td>2 gp</td><td>1d6</td><td>1d8</td><td>X3</td><td>20 ft.</td><td>6 lbs.</td><td>P</td><td>brace</td>
+								</tr>
+								<tr><td colspan="12" class="itemType">Ranged Weapons</td></tr>
+								<tr>
+									<td><span class="addItem weapon"></span></td>
+									<td>
+										<select class="itemMaterial">
+											<option value="wood">Wood</option>
+											<option value="Adamantine">Darkwood</option>
+										</select>
+									</td>
+									<td>
+										<select class="itemModifier">
+											<option value="0">None</option>
+											<option value="1">+1</option>
+											<option value="2">+2</option>
+											<option value="3">+3</option>
+											<option value="4">+4</option>
+											<option value="5">+5</option>
+										</select>
+									</td>
+									<td class="itemName">Blowgun</td><td>2 gp</td><td>1</td><td>1d2</td><td>X2</td><td>20 ft.</td><td>1 lb.</td><td>P</td><td>-</td>
+								</tr>
+								<tr>
+									<td><span class="addItem ammo"></span></td>
+									<td>
+										<select class="itemMaterial">
+											<option value="wood">Wood</option>
+											<option value="Adamantine">Darkwood</option>
+										</select>
+									</td>
+									<td>
+										<select class="itemModifier">
+											<option value="0">None</option>
+											<option value="1">+1</option>
+											<option value="2">+2</option>
+											<option value="3">+3</option>
+											<option value="4">+4</option>
+											<option value="5">+5</option>
+										</select>
+									</td>
+									<td class="itemName indent">Darts, blowgun (10)</td><td>5 sp</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td>
+								</tr>
+								<tr>
+									<td><span class="addItem weapon"></span></td>
+									<td>
+										<select class="itemMaterial">
+											<option value="wood">Wood</option>
+											<option value="Adamantine">Darkwood</option>
+										</select>
+									</td>
+									<td>
+										<select class="itemModifier">
+											<option value="0">None</option>
+											<option value="1">+1</option>
+											<option value="2">+2</option>
+											<option value="3">+3</option>
+											<option value="4">+4</option>
+											<option value="5">+5</option>
+										</select>
+									</td>
+									<td class="itemName">Crossbow, heavy</td><td>50 gp</td><td>1d8</td><td>1d10</td><td>19-20/X2</td><td>120 ft.</td><td>8 lbs.</td><td>P</td><td>-</td>
+								</tr>
+								<tr>
+									<td><span class="addItem ammo"></span></td>
+									<td>
+										<select class="itemMaterial">
+											<option value="wood">Wood</option>
+											<option value="Adamantine">Darkwood</option>
+										</select>
+									</td>
+									<td>
+										<select class="itemModifier">
+											<option value="0">None</option>
+											<option value="1">+1</option>
+											<option value="2">+2</option>
+											<option value="3">+3</option>
+											<option value="4">+4</option>
+											<option value="5">+5</option>
+										</select>
+									</td>
+									<td class="itemName indent">Bolts, crossbow (10)</td><td>1 gp</td><td>-</td><td>-</td><td>-</td><td>-</td><td>1 lb.</td><td>-</td><td>-</td>
+								</tr>
+								<tr>
+									<td><span class="addItem weapon"></span></td>
+									<td>
+										<select class="itemMaterial">
+											<option value="wood">Wood</option>
+											<option value="Adamantine">Darkwood</option>
+										</select>
+									</td>
+									<td>
+										<select class="itemModifier">
+											<option value="0">None</option>
+											<option value="1">+1</option>
+											<option value="2">+2</option>
+											<option value="3">+3</option>
+											<option value="4">+4</option>
+											<option value="5">+5</option>
+										</select>
+									</td>
+									<td class="itemName">Crossbow, light</td><td>35 gp</td><td>1d6</td><td>1d8</td><td>19-20/X2</td><td>80 ft.</td><td>4 lbs.</td><td>P</td><td>-</td>
+								</tr>
+								<tr>
+									<td><span class="addItem ammo"></span></td>
+									<td>
+										<select class="itemMaterial">
+											<option value="wood">Wood</option>
+											<option value="Adamantine">Darkwood</option>
+										</select>
+									</td>
+									<td>
+										<select class="itemModifier">
+											<option value="0">None</option>
+											<option value="1">+1</option>
+											<option value="2">+2</option>
+											<option value="3">+3</option>
+											<option value="4">+4</option>
+											<option value="5">+5</option>
+										</select>
+									</td>
+									<td class="itemName indent">Bolts, crossbow (10)</td><td>1 gp</td><td>-</td><td>-</td><td>-</td><td>-</td><td>1 lb.</td><td>-</td><td>-</td>
+								</tr>
+								<tr>
+									<td><span class="addItem weapon"></span></td>
+									<td>
+										<select class="itemMaterial">
+											<option value="wood">Wood</option>
+											<option value="Adamantine">Darkwood</option>
+										</select>
+									</td>
+									<td>
+										<select class="itemModifier">
+											<option value="0">None</option>
+											<option value="1">+1</option>
+											<option value="2">+2</option>
+											<option value="3">+3</option>
+											<option value="4">+4</option>
+											<option value="5">+5</option>
+										</select>
+									</td>
+									<td class="itemName">Dart</td><td>5 sp</td><td>1d3</td><td>1d4</td><td>X2</td><td>20 ft.</td><td>1/2 lb.</td><td>P</td><td>-</td>
+								</tr>
+								<tr>
+									<td><span class="addItem weapon"></span></td>
+									<td>
+										<select class="itemMaterial">
+											<option value="steel">Steel</option>
+											<option value="Adamantine">Adamantine</option>
+											<option value="Cold Iron">Cold Iron</option>
+											<option value="Silver">Silver</option>
+										</select>
+									</td>
+									<td>
+										<select class="itemModifier">
+											<option value="0">None</option>
+											<option value="1">+1</option>
+											<option value="2">+2</option>
+											<option value="3">+3</option>
+											<option value="4">+4</option>
+											<option value="5">+5</option>
+										</select>
+									</td>
+									<td class="itemName">Javelin</td><td>1 gp</td><td>1d4</td><td>1d6</td><td>X2</td><td>30 ft.</td><td>2 lbs.</td><td>P</td><td>-</td>
+								</tr>
+								<tr>
+									<td><span class="addItem weapon"></span></td>
+									<td>
+									</td>
+									<td>
+										<select class="itemModifier">
+											<option value="0">None</option>
+											<option value="1">+1</option>
+											<option value="2">+2</option>
+											<option value="3">+3</option>
+											<option value="4">+4</option>
+											<option value="5">+5</option>
+										</select>
+									</td>
+									<td class="itemName">Sling</td><td>-</td><td>1d3</td><td>1d4</td><td>X2</td><td>50 ft.</td><td>-</td><td>B</td><td>-</td>
+								</tr>
+								<tr>
+									<td><span class="addItem ammo"></span></td>
+									<td>
+									</td>
+									<td>
+										<select class="itemModifier">
+											<option value="0">None</option>
+											<option value="1">+1</option>
+											<option value="2">+2</option>
+											<option value="3">+3</option>
+											<option value="4">+4</option>
+											<option value="5">+5</option>
+										</select>
+									</td>
+									<td class="itemName indent">Bullets, sling (10)</td><td>1 sp</td><td>-</td><td>-</td><td>-</td><td>-</td><td>5 lbs.</td><td>-</td><td>-</td>
+								</tr>
+							</table>
+						</div>
+					</div>
+					<div class="ui-state-active ui-corner-all">
+						<h5 class="ui-accordion-header expandable"><span class="ui-icon ui-icon-triangle-1-e"></span><a href="#">Martial Weapons</a></h5>
+						<div class="hidden">
+							<table id="martialWeaponsTable" class="itemsTable">
+								<tr class="headerRow noHighlight"><th></th><th>Material</th><th>Modifier</th><th>Item</th><th>Cost</th><th>Dmg (S)</th><th>Dmg (M)</th><th>Critical</th><th>Range</th><th>Weight</th><th>Type</th><th class="weaponSpecial">Special</th></tr>
+								<tr><td colspan="12" class="itemType">Light Melee Weapons</td></tr>
+								<tr>
+									<td><span class="addItem weapon"></span></td>
+									<td>
+										<select class="itemMaterial">
+											<option value="steel">Steel</option>
+											<option value="Adamantine">Adamantine</option>
+											<option value="Cold Iron">Cold Iron</option>
+											<option value="Silver">Silver</option>
+										</select>
+									</td>
+									<td>
+										<select class="itemModifier">
+											<option value="0">None</option>
+											<option value="1">+1</option>
+											<option value="2">+2</option>
+											<option value="3">+3</option>
+											<option value="4">+4</option>
+											<option value="5">+5</option>
+										</select>
+									</td>
+									<td class="itemName">Axe, throwing</td><td>8 gp</td><td>1d4</td><td>1d6</td><td>X2</td><td>10 ft.</td><td>2 lbs.</td><td>S</td><td>-</td>
+								</tr>
+								<tr>
+									<td><span class="addItem weapon"></span></td>
+									<td>
+										<select class="itemMaterial">
+											<option value="steel">Steel</option>
+											<option value="Adamantine">Adamantine</option>
+											<option value="Cold Iron">Cold Iron</option>
+											<option value="Silver">Silver</option>
+										</select>
+									</td>
+									<td>
+										<select class="itemModifier">
+											<option value="0">None</option>
+											<option value="1">+1</option>
+											<option value="2">+2</option>
+											<option value="3">+3</option>
+											<option value="4">+4</option>
+											<option value="5">+5</option>
+										</select>
+									</td>
+									<td class="itemName">Hammer, light</td><td>1 gp</td><td>1d3</td><td>1d4</td><td>X2</td><td>20 ft.</td><td>2 lbs.</td><td>B</td><td>-</td>
+								</tr>
+								<tr>
+									<td><span class="addItem weapon"></span></td>
+									<td>
+										<select class="itemMaterial">
+											<option value="steel">Steel</option>
+											<option value="Adamantine">Adamantine</option>
+											<option value="Cold Iron">Cold Iron</option>
+											<option value="Silver">Silver</option>
+										</select>
+									</td>
+									<td>
+										<select class="itemModifier">
+											<option value="0">None</option>
+											<option value="1">+1</option>
+											<option value="2">+2</option>
+											<option value="3">+3</option>
+											<option value="4">+4</option>
+											<option value="5">+5</option>
+										</select>
+									</td>
+									<td class="itemName">Handaxe</td><td>6 gp</td><td>1d4</td><td>1d6</td><td>X3</td><td>-</td><td>3 lbs.</td><td>S</td><td>-</td>
+								</tr>
+								<tr>
+									<td><span class="addItem weapon"></span></td>
+									<td>
+										<select class="itemMaterial">
+											<option value="steel">Steel</option>
+											<option value="Adamantine">Adamantine</option>
+											<option value="Cold Iron">Cold Iron</option>
+											<option value="Silver">Silver</option>
+										</select>
+									</td>
+									<td>
+										<select class="itemModifier">
+											<option value="0">None</option>
+											<option value="1">+1</option>
+											<option value="2">+2</option>
+											<option value="3">+3</option>
+											<option value="4">+4</option>
+											<option value="5">+5</option>
+										</select>
+									</td>
+									<td class="itemName">Kukri</td><td>8 gp</td><td>1d3</td><td>1d4</td><td>18-20/X2</td><td>-</td><td>2 lbs.</td><td>S</td><td>-</td>
+								</tr>
+								<tr>
+									<td><span class="addItem weapon"></span></td>
+									<td>
+										<select class="itemMaterial">
+											<option value="steel">Steel</option>
+											<option value="Adamantine">Adamantine</option>
+											<option value="Cold Iron">Cold Iron</option>
+											<option value="Silver">Silver</option>
+										</select>
+									</td>
+									<td>
+										<select class="itemModifier">
+											<option value="0">None</option>
+											<option value="1">+1</option>
+											<option value="2">+2</option>
+											<option value="3">+3</option>
+											<option value="4">+4</option>
+											<option value="5">+5</option>
+										</select>
+									</td>
+									<td class="itemName">Pick, light</td><td>4 gp</td><td>1d3</td><td>1d4</td><td>X4</td><td>-</td><td>3 lbs.</td><td>P</td><td>-</td>
+								</tr>
+								<tr>
+									<td><span class="addItem weapon"></span></td>
+									<td>
+										<select class="itemMaterial">
+											<option value="steel">Steel</option>
+											<option value="Adamantine">Adamantine</option>
+											<option value="Cold Iron">Cold Iron</option>
+											<option value="Silver">Silver</option>
+										</select>
+									</td>
+									<td>
+										<select class="itemModifier">
+											<option value="0">None</option>
+											<option value="1">+1</option>
+											<option value="2">+2</option>
+											<option value="3">+3</option>
+											<option value="4">+4</option>
+											<option value="5">+5</option>
+										</select>
+									</td>
+									<td class="itemName">Sap</td><td>1 gp</td><td>1d4</td><td>1d6</td><td>X2</td><td>-</td><td>2 lbs.</td><td>B</td><td>nonlethal</td>
+								</tr>
+								<tr>
+									<td><span class="addItem weapon"></span></td>
+									<td>
+										<select class="itemMaterial">
+											<option value="steel">Steel</option>
+											<option value="Adamantine">Adamantine</option>
+											<option value="Cold Iron">Cold Iron</option>
+											<option value="Silver">Silver</option>
+										</select>
+									</td>
+									<td>
+										<select class="itemModifier">
+											<option value="0">None</option>
+											<option value="1">+1</option>
+											<option value="2">+2</option>
+											<option value="3">+3</option>
+											<option value="4">+4</option>
+											<option value="5">+5</option>
+										</select>
+									</td>
+									<td class="itemName">Starknife</td><td>24 gp</td><td>1d3</td><td>1d4</td><td>X3</td><td>20 ft.</td><td>3 lbs.</td><td>P</td><td>-</td>
+								</tr>
+								<tr>
+									<td><span class="addItem weapon"></span></td>
+									<td>
+										<select class="itemMaterial">
+											<option value="steel">Steel</option>
+											<option value="Adamantine">Adamantine</option>
+											<option value="Cold Iron">Cold Iron</option>
+											<option value="Silver">Silver</option>
+										</select>
+									</td>
+									<td>
+										<select class="itemModifier">
+											<option value="0">None</option>
+											<option value="1">+1</option>
+											<option value="2">+2</option>
+											<option value="3">+3</option>
+											<option value="4">+4</option>
+											<option value="5">+5</option>
+										</select>
+									</td>
+									<td class="itemName">Sword, short</td><td>10 gp</td><td>1d4</td><td>1d6</td><td>19-20/X2</td><td>-</td><td>2 lbs.</td><td>P</td><td>-</td>
+								</tr>
+								<tr><td colspan="12" class="itemType">One-Handed Melee Weapons</td></tr>
+								<tr>
+									<td><span class="addItem weapon"></span></td>
+									<td>
+										<select class="itemMaterial">
+											<option value="steel">Steel</option>
+											<option value="Adamantine">Adamantine</option>
+											<option value="Cold Iron">Cold Iron</option>
+											<option value="Silver">Silver</option>
+										</select>
+									</td>
+									<td>
+										<select class="itemModifier">
+											<option value="0">None</option>
+											<option value="1">+1</option>
+											<option value="2">+2</option>
+											<option value="3">+3</option>
+											<option value="4">+4</option>
+											<option value="5">+5</option>
+										</select>
+									</td>
+									<td class="itemName">Battleaxe</td><td>10 gp</td><td>1d6</td><td>1d8</td><td>X3</td><td>-</td><td>6 lbs.</td><td>S</td><td>-</td>
+								</tr>
+								<tr>
+									<td><span class="addItem weapon"></span></td>
+									<td>
+										<select class="itemMaterial">
+											<option value="steel">Steel</option>
+											<option value="Adamantine">Adamantine</option>
+											<option value="Cold Iron">Cold Iron</option>
+											<option value="Silver">Silver</option>
+										</select>
+									</td>
+									<td>
+										<select class="itemModifier">
+											<option value="0">None</option>
+											<option value="1">+1</option>
+											<option value="2">+2</option>
+											<option value="3">+3</option>
+											<option value="4">+4</option>
+											<option value="5">+5</option>
+										</select>
+									</td>
+									<td class="itemName">Flail</td><td>8 gp</td><td>1d6</td><td>1d8</td><td>X2</td><td>-</td><td>5 lbs.</td><td>B</td><td>disarm, trip</td>
+								</tr>
+								<tr>
+									<td><span class="addItem weapon"></span></td>
+									<td>
+										<select class="itemMaterial">
+											<option value="steel">Steel</option>
+											<option value="Adamantine">Adamantine</option>
+											<option value="Cold Iron">Cold Iron</option>
+											<option value="Silver">Silver</option>
+										</select>
+									</td>
+									<td>
+										<select class="itemModifier">
+											<option value="0">None</option>
+											<option value="1">+1</option>
+											<option value="2">+2</option>
+											<option value="3">+3</option>
+											<option value="4">+4</option>
+											<option value="5">+5</option>
+										</select>
+									</td>
+									<td class="itemName">Longsword</td><td>15 gp</td><td>1d6</td><td>1d8</td><td>19-20/X2</td><td>-</td><td>4 lbs.</td><td>S</td><td>-</td>
+								</tr>
+								<tr>
+									<td><span class="addItem weapon"></span></td>
+									<td>
+										<select class="itemMaterial">
+											<option value="steel">Steel</option>
+											<option value="Adamantine">Adamantine</option>
+											<option value="Cold Iron">Cold Iron</option>
+											<option value="Silver">Silver</option>
+										</select>
+									</td>
+									<td>
+										<select class="itemModifier">
+											<option value="0">None</option>
+											<option value="1">+1</option>
+											<option value="2">+2</option>
+											<option value="3">+3</option>
+											<option value="4">+4</option>
+											<option value="5">+5</option>
+										</select>
+									</td>
+									<td class="itemName">Pick, heavy</td><td>8 gp</td><td>1d4</td><td>1d6</td><td>X4</td><td>-</td><td>6 lbs.</td><td>P</td><td>-</td>
+								</tr>
+								<tr>
+									<td><span class="addItem weapon"></span></td>
+									<td>
+										<select class="itemMaterial">
+											<option value="steel">Steel</option>
+											<option value="Adamantine">Adamantine</option>
+											<option value="Cold Iron">Cold Iron</option>
+											<option value="Silver">Silver</option>
+										</select>
+									</td>
+									<td>
+										<select class="itemModifier">
+											<option value="0">None</option>
+											<option value="1">+1</option>
+											<option value="2">+2</option>
+											<option value="3">+3</option>
+											<option value="4">+4</option>
+											<option value="5">+5</option>
+										</select>
+									</td>
+									<td class="itemName">Rapier</td><td>20 gp</td><td>1d4</td><td>1d6</td><td>18-20/X2</td><td>-</td><td>2 lbs.</td><td>P</td><td>-</td>
+								</tr>
+								<tr>
+									<td><span class="addItem weapon"></span></td>
+									<td>
+										<select class="itemMaterial">
+											<option value="steel">Steel</option>
+											<option value="Adamantine">Adamantine</option>
+											<option value="Cold Iron">Cold Iron</option>
+											<option value="Silver">Silver</option>
+										</select>
+									</td>
+									<td>
+										<select class="itemModifier">
+											<option value="0">None</option>
+											<option value="1">+1</option>
+											<option value="2">+2</option>
+											<option value="3">+3</option>
+											<option value="4">+4</option>
+											<option value="5">+5</option>
+										</select>
+									</td>
+									<td class="itemName">Scimitar</td><td>15 gp</td><td>1d4</td><td>1d6</td><td>18-20/X2</td><td>-</td><td>4 lbs.</td><td>S</td><td>-</td>
+								</tr>
+								<tr>
+									<td><span class="addItem weapon"></span></td>
+									<td>
+										<select class="itemMaterial">
+											<option value="steel">Steel</option>
+											<option value="Adamantine">Adamantine</option>
+											<option value="Cold Iron">Cold Iron</option>
+											<option value="Silver">Silver</option>
+										</select>
+									</td>
+									<td>
+										<select class="itemModifier">
+											<option value="0">None</option>
+											<option value="1">+1</option>
+											<option value="2">+2</option>
+											<option value="3">+3</option>
+											<option value="4">+4</option>
+											<option value="5">+5</option>
+										</select>
+									</td>
+									<td class="itemName">Trident</td><td>15 gp</td><td>1d6</td><td>1d8</td><td>X2</td><td>10 ft.</td><td>4 lbs.</td><td>P</td><td>brace</td>
+								</tr>
+								<tr>
+									<td><span class="addItem weapon"></span></td>
+									<td>
+										<select class="itemMaterial">
+											<option value="steel">Steel</option>
+											<option value="Adamantine">Adamantine</option>
+											<option value="Cold Iron">Cold Iron</option>
+											<option value="Silver">Silver</option>
+										</select>
+									</td>
+									<td>
+										<select class="itemModifier">
+											<option value="0">None</option>
+											<option value="1">+1</option>
+											<option value="2">+2</option>
+											<option value="3">+3</option>
+											<option value="4">+4</option>
+											<option value="5">+5</option>
+										</select>
+									</td>
+									<td class="itemName">Warhammer</td><td>12 gp</td><td>1d6</td><td>1d8</td><td>X3</td><td>-</td><td>5 lbs.</td><td>B</td><td>-</td>
+								</tr>
+								<tr><td colspan="12" class="itemType">Two-Handed Melee Weapons</td></tr>
+								<tr>
+									<td><span class="addItem weapon"></span></td>
+									<td>
+										<select class="itemMaterial">
+											<option value="steel">Steel</option>
+											<option value="Adamantine">Adamantine</option>
+											<option value="Cold Iron">Cold Iron</option>
+											<option value="Silver">Silver</option>
+										</select>
+									</td>
+									<td>
+										<select class="itemModifier">
+											<option value="0">None</option>
+											<option value="1">+1</option>
+											<option value="2">+2</option>
+											<option value="3">+3</option>
+											<option value="4">+4</option>
+											<option value="5">+5</option>
+										</select>
+									</td>
+									<td class="itemName">Falchion</td><td>75 gp</td><td>1d6</td><td>2d4</td><td>18-20/X2</td><td>-</td><td>8 lbs.</td><td>S</td><td>-</td>
+								</tr>
+								<tr>
+									<td><span class="addItem weapon"></span></td>
+									<td>
+										<select class="itemMaterial">
+											<option value="steel">Steel</option>
+											<option value="Adamantine">Adamantine</option>
+											<option value="Cold Iron">Cold Iron</option>
+											<option value="Silver">Silver</option>
+										</select>
+									</td>
+									<td>
+										<select class="itemModifier">
+											<option value="0">None</option>
+											<option value="1">+1</option>
+											<option value="2">+2</option>
+											<option value="3">+3</option>
+											<option value="4">+4</option>
+											<option value="5">+5</option>
+										</select>
+									</td>
+									<td class="itemName">Glaive</td><td>8 gp</td><td>1d8</td><td>1d10</td><td>X3</td><td>-</td><td>10 lbs.</td><td>S</td><td>reach</td>
+								</tr>
+								<tr>
+									<td><span class="addItem weapon"></span></td>
+									<td>
+										<select class="itemMaterial">
+											<option value="steel">Steel</option>
+											<option value="Adamantine">Adamantine</option>
+											<option value="Cold Iron">Cold Iron</option>
+											<option value="Silver">Silver</option>
+										</select>
+									</td>
+									<td>
+										<select class="itemModifier">
+											<option value="0">None</option>
+											<option value="1">+1</option>
+											<option value="2">+2</option>
+											<option value="3">+3</option>
+											<option value="4">+4</option>
+											<option value="5">+5</option>
+										</select>
+									</td>
+									<td class="itemName">Greataxe</td><td>20 gp</td><td>1d10</td><td>1d12</td><td>X3</td><td>-</td><td>12 lbs.</td><td>S</td><td>-</td>
+								</tr>
+								<tr>
+									<td><span class="addItem weapon"></span></td>
+									<td>
+										<select class="itemMaterial">
+											<option value="steel">Steel</option>
+											<option value="Adamantine">Adamantine</option>
+											<option value="Cold Iron">Cold Iron</option>
+											<option value="Silver">Silver</option>
+										</select>
+									</td>
+									<td>
+										<select class="itemModifier">
+											<option value="0">None</option>
+											<option value="1">+1</option>
+											<option value="2">+2</option>
+											<option value="3">+3</option>
+											<option value="4">+4</option>
+											<option value="5">+5</option>
+										</select>
+									</td>
+									<td class="itemName">Greatclub</td><td>5 gp</td><td>1d8</td><td>1d10</td><td>X2</td><td>-</td><td>8 lbs.</td><td>B</td><td>-</td>
+								</tr>
+								<tr>
+									<td><span class="addItem weapon"></span></td>
+									<td>
+										<select class="itemMaterial">
+											<option value="steel">Steel</option>
+											<option value="Adamantine">Adamantine</option>
+											<option value="Cold Iron">Cold Iron</option>
+											<option value="Silver">Silver</option>
+										</select>
+									</td>
+									<td>
+										<select class="itemModifier">
+											<option value="0">None</option>
+											<option value="1">+1</option>
+											<option value="2">+2</option>
+											<option value="3">+3</option>
+											<option value="4">+4</option>
+											<option value="5">+5</option>
+										</select>
+									</td>
+									<td class="itemName">Flail, heavy</td><td>15 gp</td><td>1d8</td><td>1d10</td><td>19-20/X2</td><td>-</td><td>10 lbs.</td><td>B</td><td>disarm, trip</td>
+								</tr>
+								<tr>
+									<td><span class="addItem weapon"></span></td>
+									<td>
+										<select class="itemMaterial">
+											<option value="steel">Steel</option>
+											<option value="Adamantine">Adamantine</option>
+											<option value="Cold Iron">Cold Iron</option>
+											<option value="Silver">Silver</option>
+										</select>
+									</td>
+									<td>
+										<select class="itemModifier">
+											<option value="0">None</option>
+											<option value="1">+1</option>
+											<option value="2">+2</option>
+											<option value="3">+3</option>
+											<option value="4">+4</option>
+											<option value="5">+5</option>
+										</select>
+									</td>
+									<td class="itemName">Greatsword</td><td>50 gp</td><td>1d10</td><td>2d6</td><td>19-20/X2</td><td>-</td><td>8 lbs.</td><td>S</td><td>-</td>
+								</tr>
+								<tr>
+									<td><span class="addItem weapon"></span></td>
+									<td>
+										<select class="itemMaterial">
+											<option value="steel">Steel</option>
+											<option value="Adamantine">Adamantine</option>
+											<option value="Cold Iron">Cold Iron</option>
+											<option value="Silver">Silver</option>
+										</select>
+									</td>
+									<td>
+										<select class="itemModifier">
+											<option value="0">None</option>
+											<option value="1">+1</option>
+											<option value="2">+2</option>
+											<option value="3">+3</option>
+											<option value="4">+4</option>
+											<option value="5">+5</option>
+										</select>
+									</td>
+									<td class="itemName">Guisarme</td><td>9 gp</td><td>1d6 </td><td>2d4</td><td>X3</td><td>-</td><td>12 lbs.</td><td>S</td><td>reach, trip</td>
+								</tr>
+								<tr>
+									<td><span class="addItem weapon"></span></td>
+									<td>
+										<select class="itemMaterial">
+											<option value="steel">Steel</option>
+											<option value="Adamantine">Adamantine</option>
+											<option value="Cold Iron">Cold Iron</option>
+											<option value="Silver">Silver</option>
+										</select>
+									</td>
+									<td>
+										<select class="itemModifier">
+											<option value="0">None</option>
+											<option value="1">+1</option>
+											<option value="2">+2</option>
+											<option value="3">+3</option>
+											<option value="4">+4</option>
+											<option value="5">+5</option>
+										</select>
+									</td>
+									<td class="itemName">Halberd</td><td>10 gp</td><td>1d8</td><td>1d10</td><td>X3</td><td>-</td><td>12 lbs.</td><td>P or S</td><td>brace, trip</td>
+								</tr>
+								<tr>
+									<td><span class="addItem weapon"></span></td>
+									<td>
+										<select class="itemMaterial">
+											<option value="steel">Steel</option>
+											<option value="Adamantine">Adamantine</option>
+											<option value="Cold Iron">Cold Iron</option>
+											<option value="Silver">Silver</option>
+										</select>
+									</td>
+									<td>
+										<select class="itemModifier">
+											<option value="0">None</option>
+											<option value="1">+1</option>
+											<option value="2">+2</option>
+											<option value="3">+3</option>
+											<option value="4">+4</option>
+											<option value="5">+5</option>
+										</select>
+									</td>
+									<td class="itemName">Lance</td><td>10 gp</td><td>1d6</td><td>1d8</td><td>X3</td><td>-</td><td>10 lbs.</td><td>P</td><td>reach</td>
+								</tr>
+								<tr>
+									<td><span class="addItem weapon"></span></td>
+									<td>
+										<select class="itemMaterial">
+											<option value="steel">Steel</option>
+											<option value="Adamantine">Adamantine</option>
+											<option value="Cold Iron">Cold Iron</option>
+											<option value="Silver">Silver</option>
+										</select>
+									</td>
+									<td>
+										<select class="itemModifier">
+											<option value="0">None</option>
+											<option value="1">+1</option>
+											<option value="2">+2</option>
+											<option value="3">+3</option>
+											<option value="4">+4</option>
+											<option value="5">+5</option>
+										</select>
+									</td>
+									<td class="itemName">Ranseur</td><td>10 gp</td><td>1d6</td><td>2d4</td><td>X3</td><td>-</td><td>12 lbs.</td><td>P</td><td>disarm, reach</td>
+								</tr>
+								<tr>
+									<td><span class="addItem weapon"></span></td>
+									<td>
+										<select class="itemMaterial">
+											<option value="steel">Steel</option>
+											<option value="Adamantine">Adamantine</option>
+											<option value="Cold Iron">Cold Iron</option>
+											<option value="Silver">Silver</option>
+										</select>
+									</td>
+									<td>
+										<select class="itemModifier">
+											<option value="0">None</option>
+											<option value="1">+1</option>
+											<option value="2">+2</option>
+											<option value="3">+3</option>
+											<option value="4">+4</option>
+											<option value="5">+5</option>
+										</select>
+									</td>
+									<td class="itemName">Scythe</td><td>18 gp</td><td>1d6</td><td>2d4</td><td>X4</td><td>-</td><td>10 lbs.</td><td>P or S</td><td>trip</td>
+								</tr>
+								<tr><td colspan="12" class="itemType">Ranged Weapons</td></tr>
+								<tr>
+									<td><span class="addItem weapon"></span></td>
+									<td>
+										<select class="itemMaterial">
+											<option value="wood">Wood</option>
+											<option value="Adamantine">Darkwood</option>
+										</select>
+									</td>
+									<td>
+										<select class="itemModifier">
+											<option value="0">None</option>
+											<option value="1">+1</option>
+											<option value="2">+2</option>
+											<option value="3">+3</option>
+											<option value="4">+4</option>
+											<option value="5">+5</option>
+										</select>
+									</td>
+									<td class="itemName">Longbow</td><td>75 gp</td><td>1d6</td><td>1d8</td><td>X3</td><td>100 ft.</td><td>3 lbs.</td><td>P</td><td>-</td>
+								</tr>
+								<tr>
+									<td><span class="addItem ammo"></span></td>
+									<td>
+										<select class="itemMaterial">
+											<option value="wood">Wood</option>
+											<option value="Adamantine">Darkwood</option>
+										</select>
+									</td>
+									<td>
+										<select class="itemModifier">
+											<option value="0">None</option>
+											<option value="1">+1</option>
+											<option value="2">+2</option>
+											<option value="3">+3</option>
+											<option value="4">+4</option>
+											<option value="5">+5</option>
+										</select>
+									</td>
+									<td class="itemName indent">Arrows (20)</td><td>1 gp</td><td>-</td><td>-</td><td>-</td><td>-</td><td>3 lbs.</td><td>-</td><td>-</td>
+								</tr>
+								<tr>
+									<td><span class="addItem weapon"></span></td>
+									<td>
+										<select class="itemMaterial">
+											<option value="wood">Wood</option>
+											<option value="Adamantine">Darkwood</option>
+										</select>
+									</td>
+									<td>
+										<select class="itemModifier">
+											<option value="0">None</option>
+											<option value="1">+1</option>
+											<option value="2">+2</option>
+											<option value="3">+3</option>
+											<option value="4">+4</option>
+											<option value="5">+5</option>
+										</select>
+									</td>
+									<td class="itemName">Longbow, composite</td><td>100 gp</td><td>1d6</td><td>1d8</td><td>X3</td><td>110 ft.</td><td>3 lbs.</td><td>P</td><td>-</td>
+								</tr>
+								<tr>
+									<td><span class="addItem ammo"></span></td>
+									<td>
+										<select class="itemMaterial">
+											<option value="wood">Wood</option>
+											<option value="Adamantine">Darkwood</option>
+										</select>
+									</td>
+									<td>
+										<select class="itemModifier">
+											<option value="0">None</option>
+											<option value="1">+1</option>
+											<option value="2">+2</option>
+											<option value="3">+3</option>
+											<option value="4">+4</option>
+											<option value="5">+5</option>
+										</select>
+									</td>
+									<td class="itemName indent">Arrows (20)</td><td>1 gp</td><td>-</td><td>-</td><td>-</td><td>-</td><td>3 lbs.</td><td>-</td><td>-</td>
+								</tr>
+								<tr>
+									<td><span class="addItem weapon"></span></td>
+									<td>
+										<select class="itemMaterial">
+											<option value="wood">Wood</option>
+											<option value="Adamantine">Darkwood</option>
+										</select>
+									</td>
+									<td>
+										<select class="itemModifier">
+											<option value="0">None</option>
+											<option value="1">+1</option>
+											<option value="2">+2</option>
+											<option value="3">+3</option>
+											<option value="4">+4</option>
+											<option value="5">+5</option>
+										</select>
+									</td>
+									<td class="itemName">Shortbow</td><td>30 gp</td><td>1d4</td><td>1d6</td><td>X3</td><td>60 ft.</td><td>2 lbs.</td><td>P</td><td>-</td>
+								</tr>
+								<tr>
+									<td><span class="addItem ammo"></span></td>
+									<td>
+										<select class="itemMaterial">
+											<option value="wood">Wood</option>
+											<option value="Adamantine">Darkwood</option>
+										</select>
+									</td>
+									<td>
+										<select class="itemModifier">
+											<option value="0">None</option>
+											<option value="1">+1</option>
+											<option value="2">+2</option>
+											<option value="3">+3</option>
+											<option value="4">+4</option>
+											<option value="5">+5</option>
+										</select>
+									</td>
+									<td class="itemName indent">Arrows (20)</td><td>1 gp</td><td>-</td><td>-</td><td>-</td><td>-</td><td>3 lbs.</td><td>-</td><td>-</td>
+								</tr>
+								<tr>
+									<td><span class="addItem weapon"></span></td>
+									<td>
+										<select class="itemMaterial">
+											<option value="wood">Wood</option>
+											<option value="Adamantine">Darkwood</option>
+										</select>
+									</td>
+									<td>
+										<select class="itemModifier">
+											<option value="0">None</option>
+											<option value="1">+1</option>
+											<option value="2">+2</option>
+											<option value="3">+3</option>
+											<option value="4">+4</option>
+											<option value="5">+5</option>
+										</select>
+									</td>
+									<td class="itemName">Shortbow, composite</td><td>75 gp</td><td>1d4</td><td>1d6</td><td>X3</td><td>70 ft.</td><td>2 lbs.</td><td>P</td><td>-</td>
+								</tr>
+								<tr>
+									<td><span class="addItem ammo"></span></td>
+									<td>
+										<select class="itemMaterial">
+											<option value="wood">Wood</option>
+											<option value="Adamantine">Darkwood</option>
+										</select>
+									</td>
+									<td>
+										<select class="itemModifier">
+											<option value="0">None</option>
+											<option value="1">+1</option>
+											<option value="2">+2</option>
+											<option value="3">+3</option>
+											<option value="4">+4</option>
+											<option value="5">+5</option>
+										</select>
+									</td>
+									<td class="itemName indent">Arrows (20)</td><td>1 gp</td><td>-</td><td>-</td><td>-</td><td>-</td><td>3 lbs.</td><td>-</td><td>-</td>
+								</tr>
+							</table>
+						</div>
+					</div>
+					<div class="ui-state-active ui-corner-all">
+						<h5 class="ui-accordion-header expandable"><span class="ui-icon ui-icon-triangle-1-e"></span><a href="#">Exotic Weapons</a></h5>
+						<div class="hidden">
+							<table id="exoticWeaponsTable" class="itemsTable">
+								<tr class="headerRow noHighlight"><th></th><th>Material</th><th>Modifier</th><th>Item</th><th>Cost</th><th>Dmg (S)</th><th>Dmg (M)</th><th>Critical</th><th>Range</th><th>Weight</th><th>Type</th><th class="weaponSpecial">Special</th></tr>
+								<tr><td colspan="12" class="itemType">Light Melee Weapons</td></tr>
+								<tr>
+									<td><span class="addItem weapon"></span></td>
+									<td>
+										<select class="itemMaterial">
+											<option value="steel">Steel</option>
+											<option value="Adamantine">Adamantine</option>
+											<option value="Cold Iron">Cold Iron</option>
+											<option value="Silver">Silver</option>
+										</select>
+									</td>
+									<td>
+										<select class="itemModifier">
+											<option value="0">None</option>
+											<option value="1">+1</option>
+											<option value="2">+2</option>
+											<option value="3">+3</option>
+											<option value="4">+4</option>
+											<option value="5">+5</option>
+										</select>
+									</td>
+									<td class="itemName">Kama <span class="itemType hidden">light</span></td>
+									<td>2 gp</td><td>1d4</td><td>1d6</td><td>X2</td><td>-</td><td>2 lbs.</td><td>S</td><td> monk, trip</td>
+								</tr>
+								<tr>
+									<td><span class="addItem weapon"></span></td>
+									<td>
+										<select class="itemMaterial">
+											<option value="steel">Steel</option>
+											<option value="Adamantine">Adamantine</option>
+											<option value="Cold Iron">Cold Iron</option>
+											<option value="Silver">Silver</option>
+										</select>
+									</td>
+									<td>
+										<select class="itemModifier">
+											<option value="0">None</option>
+											<option value="1">+1</option>
+											<option value="2">+2</option>
+											<option value="3">+3</option>
+											<option value="4">+4</option>
+											<option value="5">+5</option>
+										</select>
+									</td>
+									<td class="itemName">Nunchaku<span class="itemType hidden">light</span></td>
+									<td>2 gp</td><td>1d4</td><td>1d6</td><td>X2</td><td>-</td><td>2 lbs.</td><td>B</td><td>disarm, monk</td>
+								</tr>
+								<tr>
+									<td><span class="addItem weapon"></span></td>
+									<td>
+										<select class="itemMaterial">
+											<option value="steel">Steel</option>
+											<option value="Adamantine">Adamantine</option>
+											<option value="Cold Iron">Cold Iron</option>
+											<option value="Silver">Silver</option>
+										</select>
+									</td>
+									<td>
+										<select class="itemModifier">
+											<option value="0">None</option>
+											<option value="1">+1</option>
+											<option value="2">+2</option>
+											<option value="3">+3</option>
+											<option value="4">+4</option>
+											<option value="5">+5</option>
+										</select>
+									</td>
+									<td class="itemName">Sai<span class="itemType hidden">light</span></td>
+									<td>1 gp</td><td>1d3</td><td>1d4</td><td>X2</td><td>-</td><td>1 lb.</td><td>B</td><td>disarm, monk</td>
+								</tr>
+								<tr>
+									<td><span class="addItem weapon"></span></td>
+									<td>
+										<select class="itemMaterial">
+											<option value="steel">Steel</option>
+											<option value="Adamantine">Adamantine</option>
+											<option value="Cold Iron">Cold Iron</option>
+											<option value="Silver">Silver</option>
+										</select>
+									</td>
+									<td>
+										<select class="itemModifier">
+											<option value="0">None</option>
+											<option value="1">+1</option>
+											<option value="2">+2</option>
+											<option value="3">+3</option>
+											<option value="4">+4</option>
+											<option value="5">+5</option>
+										</select>
+									</td>
+									<td class="itemName">Siangham</td><td>3 gp</td><td>1d4</td><td>1d6</td><td>X2</td><td>-</td><td>1 lb.</td><td>P</td><td>monk</td>
+								</tr>
+								
+								<tr><td colspan="12" class="itemType">One-Handed Melee Weapons</td></tr>
+								<tr>
+									<td><span class="addItem weapon"></span></td>
+									<td>
+										<select class="itemMaterial">
+											<option value="steel">Steel</option>
+											<option value="Adamantine">Adamantine</option>
+											<option value="Cold Iron">Cold Iron</option>
+											<option value="Silver">Silver</option>
+										</select>
+									</td>
+									<td>
+										<select class="itemModifier">
+											<option value="0">None</option>
+											<option value="1">+1</option>
+											<option value="2">+2</option>
+											<option value="3">+3</option>
+											<option value="4">+4</option>
+											<option value="5">+5</option>
+										</select>
+									</td>
+									<td class="itemName">Sword, bastard</td><td>35 gp</td><td>1d8</td><td>1d10</td><td>19-20/X2</td><td>-</td><td>6 lbs.</td><td>S</td><td>-</td>
+								</tr>
+								<tr>
+									<td><span class="addItem weapon"></span></td>
+									<td>
+										<select class="itemMaterial">
+											<option value="steel">Steel</option>
+											<option value="Adamantine">Adamantine</option>
+											<option value="Cold Iron">Cold Iron</option>
+											<option value="Silver">Silver</option>
+										</select>
+									</td>
+									<td>
+										<select class="itemModifier">
+											<option value="0">None</option>
+											<option value="1">+1</option>
+											<option value="2">+2</option>
+											<option value="3">+3</option>
+											<option value="4">+4</option>
+											<option value="5">+5</option>
+										</select>
+									</td>
+									<td class="itemName">Waraxe, dwarven</td><td>30 gp</td><td>1d8</td><td>1d10</td><td>X3</td><td>-</td><td>8 lbs.</td><td>S</td><td>-</td>
+								</tr>
+								<tr class="even">
+									<td><span class="addItem weapon"></span></td>
+									<td>
+									</td>
+									<td>
+										<select class="itemModifier">
+											<option value="0">None</option>
+											<option value="1">+1</option>
+											<option value="2">+2</option>
+											<option value="3">+3</option>
+											<option value="4">+4</option>
+											<option value="5">+5</option>
+										</select>
+									</td>
+									<td class="itemName">Whip</td><td>1 gp</td><td>1d2</td><td>1d3</td><td>X2</td><td>-</td><td>2 lbs.</td><td>S</td><td>disarm, nonlethal, reach, trip</td>
+								</tr>
+								<tr><td colspan="12" class="itemType">Two-Handed Melee Weapons</td></tr>
+								<tr>
+									<td><span class="addItem weapon"></span></td>
+									<td>
+										<select class="itemMaterial">
+											<option value="steel">Steel</option>
+											<option value="Adamantine">Adamantine</option>
+											<option value="Cold Iron">Cold Iron</option>
+											<option value="Silver">Silver</option>
+										</select>
+									</td>
+									<td>
+										<select class="itemModifier">
+											<option value="0">None</option>
+											<option value="1">+1</option>
+											<option value="2">+2</option>
+											<option value="3">+3</option>
+											<option value="4">+4</option>
+											<option value="5">+5</option>
+										</select>
+									</td>
+									<td class="itemName">Axe, orc double</td><td>60 gp</td><td>1d6/1d6</td><td>1d8/1d8</td><td>X3</td><td>-</td><td>15 lbs.</td><td>S</td><td>double</td>
+								</tr>
+								<tr>
+									<td><span class="addItem weapon"></span></td>
+									<td></td>
+									<td>
+										<select class="itemModifier">
+											<option value="0">None</option>
+											<option value="1">+1</option>
+											<option value="2">+2</option>
+											<option value="3">+3</option>
+											<option value="4">+4</option>
+											<option value="5">+5</option>
+										</select>
+									</td>
+									<td class="itemName">Chain, spiked</td><td>25 gp</td><td>1d6</td><td>2d4</td><td>X2</td><td>-</td><td>10 lbs.</td><td>P</td><td>disarm, trip</td>
+								</tr>
+								<tr>
+									<td><span class="addItem weapon"></span></td>
+									<td>
+										<select class="itemMaterial">
+											<option value="steel">Steel</option>
+											<option value="Adamantine">Adamantine</option>
+											<option value="Cold Iron">Cold Iron</option>
+											<option value="Silver">Silver</option>
+										</select>
+									</td>
+									<td>
+										<select class="itemModifier">
+											<option value="0">None</option>
+											<option value="1">+1</option>
+											<option value="2">+2</option>
+											<option value="3">+3</option>
+											<option value="4">+4</option>
+											<option value="5">+5</option>
+										</select>
+									</td>
+									<td class="itemName">Curve blade, elven</td><td>80 gp</td><td>1d8</td><td>1d10</td><td>18-20/X2</td><td>-</td><td>7 lbs.</td><td>S</td><td>-</td>
+								</tr>
+								<tr>
+									<td><span class="addItem weapon"></span></td>
+									<td>
+										<select class="itemMaterial">
+											<option value="steel">Steel</option>
+											<option value="Adamantine">Adamantine</option>
+											<option value="Cold Iron">Cold Iron</option>
+											<option value="Silver">Silver</option>
+										</select>
+									</td>
+									<td>
+										<select class="itemModifier">
+											<option value="0">None</option>
+											<option value="1">+1</option>
+											<option value="2">+2</option>
+											<option value="3">+3</option>
+											<option value="4">+4</option>
+											<option value="5">+5</option>
+										</select>
+									</td>
+									<td class="itemName">Flail, dire</td><td>90 gp</td><td>1d6/1d6</td><td>1d8/1d8</td><td>X2</td><td>-</td><td>10 lbs.</td><td>B</td><td>disarm, double, trip</td>
+								</tr>
+								<tr>
+									<td><span class="addItem weapon"></span></td>
+									<td>
+										<select class="itemMaterial">
+											<option value="steel">Steel</option>
+											<option value="Adamantine">Adamantine</option>
+											<option value="Cold Iron">Cold Iron</option>
+											<option value="Silver">Silver</option>
+										</select>
+									</td>
+									<td>
+										<select class="itemModifier">
+											<option value="0">None</option>
+											<option value="1">+1</option>
+											<option value="2">+2</option>
+											<option value="3">+3</option>
+											<option value="4">+4</option>
+											<option value="5">+5</option>
+										</select>
+									</td>
+									<td class="itemName">Hammer, gnome hooked</td><td>20 gp</td><td>1d6/1d4</td><td>1d8/1d6</td><td>X3/X4</td><td>-</td><td>6 lbs.</td><td>B or P</td><td>double, trip</td>
+								</tr>
+								<tr>
+									<td><span class="addItem weapon"></span></td>
+									<td>
+										<select class="itemMaterial">
+											<option value="steel">Steel</option>
+											<option value="Adamantine">Adamantine</option>
+											<option value="Cold Iron">Cold Iron</option>
+											<option value="Silver">Silver</option>
+										</select>
+									</td>
+									<td>
+										<select class="itemModifier">
+											<option value="0">None</option>
+											<option value="1">+1</option>
+											<option value="2">+2</option>
+											<option value="3">+3</option>
+											<option value="4">+4</option>
+											<option value="5">+5</option>
+										</select>
+									</td>
+									<td class="itemName">Sword, two-bladed</td><td>100 gp</td><td>1d6/1d6</td><td>1d8/1d8</td><td>19-20/X2</td><td>-</td><td>10 lbs.</td><td>S</td><td>double</td>
+								</tr>
+								<tr>
+									<td><span class="addItem weapon"></span></td>
+									<td>
+										<select class="itemMaterial">
+											<option value="steel">Steel</option>
+											<option value="Adamantine">Adamantine</option>
+											<option value="Cold Iron">Cold Iron</option>
+											<option value="Silver">Silver</option>
+										</select>
+									</td>
+									<td>
+										<select class="itemModifier">
+											<option value="0">None</option>
+											<option value="1">+1</option>
+											<option value="2">+2</option>
+											<option value="3">+3</option>
+											<option value="4">+4</option>
+											<option value="5">+5</option>
+										</select>
+									</td>
+									<td class="itemName">Urgrosh, dwarven</td><td>50 gp</td><td>1d6/1d4</td><td>1d8/1d6</td><td>X3</td><td>-</td><td>12 lbs.</td><td>P or S</td><td>brace, double</td>
+								</tr>
+								<tr><td colspan="12" class="itemType">Ranged Weapons</td></tr>
+								<tr>
+									<td><span class="addItem weapon"></span></td>
+									<td>
+									</td>
+									<td>
+										<select class="itemModifier">
+											<option value="0">None</option>
+											<option value="1">+1</option>
+											<option value="2">+2</option>
+											<option value="3">+3</option>
+											<option value="4">+4</option>
+											<option value="5">+5</option>
+										</select>
+									</td>
+									<td class="itemName">Bolas</td><td>5 gp</td><td>1d3</td><td>1d4</td><td>X2</td><td>10 ft.</td><td>2 lbs.</td><td>B</td><td>nonlethal, trip</td>
+								</tr>
+								<tr>
+									<td><span class="addItem weapon"></span></td>
+									<td>
+										<select class="itemMaterial">
+											<option value="wood">Wood</option>
+											<option value="Adamantine">Darkwood</option>
+										</select>
+									</td>
+									<td>
+										<select class="itemModifier">
+											<option value="0">None</option>
+											<option value="1">+1</option>
+											<option value="2">+2</option>
+											<option value="3">+3</option>
+											<option value="4">+4</option>
+											<option value="5">+5</option>
+										</select>
+									</td>
+									<td class="itemName">Crossbow, hand</td><td>100 gp</td><td>1d3</td><td>1d4</td><td>19-20/X2</td><td>30 ft.</td><td>2 lbs.</td><td>P</td><td>-</td>
+								</tr>
+								<tr>
+									<td><span class="addItem weapon"></span></td>
+									<td>
+										<select class="itemMaterial">
+											<option value="wood">Wood</option>
+											<option value="Adamantine">Darkwood</option>
+										</select>
+									</td>
+									<td>
+										<select class="itemModifier">
+											<option value="0">None</option>
+											<option value="1">+1</option>
+											<option value="2">+2</option>
+											<option value="3">+3</option>
+											<option value="4">+4</option>
+											<option value="5">+5</option>
+										</select>
+									</td>
+									<td class="itemName indent">Bolts (10)</td><td>1 gp</td><td>-</td><td>-</td><td>-</td><td>-</td><td>1 lb.</td><td>-</td><td>-</td>
+								</tr>
+								<tr>
+									<td><span class="addItem weapon"></span></td>
+									<td>
+										<select class="itemMaterial">
+											<option value="wood">Wood</option>
+											<option value="Adamantine">Darkwood</option>
+										</select>
+									</td>
+									<td>
+										<select class="itemModifier">
+											<option value="0">None</option>
+											<option value="1">+1</option>
+											<option value="2">+2</option>
+											<option value="3">+3</option>
+											<option value="4">+4</option>
+											<option value="5">+5</option>
+										</select>
+									</td>
+									<td class="itemName">Crossbow, repeating heavy</td><td>400 gp</td><td>1d8</td><td>1d10</td><td>19-20/X2</td><td>120 ft.</td><td>12 lbs.</td><td>P</td><td>-</td>
+								</tr>
+								<tr>
+									<td><span class="addItem weapon"></span></td>
+									<td>
+										<select class="itemMaterial">
+											<option value="wood">Wood</option>
+											<option value="Adamantine">Darkwood</option>
+										</select>
+									</td>
+									<td>
+										<select class="itemModifier">
+											<option value="0">None</option>
+											<option value="1">+1</option>
+											<option value="2">+2</option>
+											<option value="3">+3</option>
+											<option value="4">+4</option>
+											<option value="5">+5</option>
+										</select>
+									</td>
+									<td class="itemName indent">Bolts (5)</td><td>1 gp</td><td>-</td><td>-</td><td>-</td><td>-</td><td>1 lb.</td><td>-</td><td>-</td>
+								</tr>
+								<tr>
+									<td><span class="addItem weapon"></span></td>
+									<td>
+										<select class="itemMaterial">
+											<option value="wood">Wood</option>
+											<option value="Adamantine">Darkwood</option>
+										</select>
+									</td>
+									<td>
+										<select class="itemModifier">
+											<option value="0">None</option>
+											<option value="1">+1</option>
+											<option value="2">+2</option>
+											<option value="3">+3</option>
+											<option value="4">+4</option>
+											<option value="5">+5</option>
+										</select>
+									</td>
+									<td class="itemName">Crossbow, repeating light</td><td>250 gp</td><td>1d6</td><td>1d8</td><td>19-20/X2</td><td>80 ft.</td><td>6 lbs.</td><td>P</td><td>-</td>
+								</tr>
+								<tr>
+									<td><span class="addItem weapon"></span></td>
+									<td>
+										<select class="itemMaterial">
+											<option value="wood">Wood</option>
+											<option value="Adamantine">Darkwood</option>
+										</select>
+									</td>
+									<td>
+										<select class="itemModifier">
+											<option value="0">None</option>
+											<option value="1">+1</option>
+											<option value="2">+2</option>
+											<option value="3">+3</option>
+											<option value="4">+4</option>
+											<option value="5">+5</option>
+										</select>
+									</td>
+									<td class="itemName indent">Bolts (5)</td><td>1 gp</td><td>-</td><td>-</td><td>-</td><td>-</td><td>1 lb.</td><td>-</td><td>-</td>
+								</tr>
+								<tr>
+									<td><span class="addItem weapon"></span></td>
+									<td>
+									</td>
+									<td>
+										<select class="itemModifier">
+											<option value="0">None</option>
+											<option value="1">+1</option>
+											<option value="2">+2</option>
+											<option value="3">+3</option>
+											<option value="4">+4</option>
+											<option value="5">+5</option>
+										</select>
+									</td>
+									<td class="itemName">Net</td><td>20 gp</td><td>-</td><td>-</td><td>-</td><td>10 ft.</td><td>6 lbs.</td><td>-</td><td>-</td>
+								</tr>
+								<tr>
+									<td><span class="addItem weapon"></span></td>
+									<td>
+										<select class="itemMaterial">
+											<option value="Steel">Steel</option>
+											<option value="Adamantine">Adamantine</option>
+											<option value="Cold Iron">Cold Iron</option>
+											<option value="Silver">Silver</option>
+										</select>
+									</td>
+									<td>
+										<select class="itemModifier">
+											<option value="0">None</option>
+											<option value="1">+1</option>
+											<option value="2">+2</option>
+											<option value="3">+3</option>
+											<option value="4">+4</option>
+											<option value="5">+5</option>
+										</select>
+									</td>
+									<td class="itemName">Shuriken (5)</td><td>1 gp</td><td>1</td><td>1d2</td><td>X2</td><td>10 ft.</td><td>1/2 lb.</td><td>P</td><td>monk</td>
+								</tr>
+								<tr>
+									<td><span class="addItem weapon"></span></td>
+									<td>
+										<select class="itemMaterial">
+											<option value="wood">Wood</option>
+											<option value="Darkwood">Darkwood</option>
+										</select>
+									</td>
+									<td>
+										<select class="itemModifier">
+											<option value="0">None</option>
+											<option value="1">+1</option>
+											<option value="2">+2</option>
+											<option value="3">+3</option>
+											<option value="4">+4</option>
+											<option value="5">+5</option>
+										</select>
+									</td>
+									<td class="itemName">Sling staff, halfling</td><td>20 gp</td><td>1d6</td><td>1d8</td><td>X3</td><td>80 ft.</td><td>3 lbs.</td><td>B</td><td>-</td>
+								</tr>
+								<tr>
+									<td><span class="addItem weapon"></span></td>
+									<td>
+									</td>
+									<td>
+										<select class="itemModifier">
+											<option value="0">None</option>
+											<option value="1">+1</option>
+											<option value="2">+2</option>
+											<option value="3">+3</option>
+											<option value="4">+4</option>
+											<option value="5">+5</option>
+										</select>
+									</td>
+									<td class="itemName indent">Bullets, sling (10)</td><td>1 sp</td><td>-</td><td>-</td><td>-</td><td>-</td><td>5 lbs.</td><td>-</td><td>-</td>
+								</tr>
+							</table>
+						</div>
+					</div>
+				</div>
+				<h3><a href="#">Armor</a></h3>
+				<div>
+					<table id="armorTable" class="itemsTable">
+						<tr class="headerRow noHighlight"><th></th><th>Material</th><th>Modifier</th><th>Item</th><th>Cost</th><th>Armor/<br/>Shield <br/> Bonus</th><th>Maximum <br/> Dex <br/> Bonus</th><th>Armor <br/> Check <br/> Penalty</th><th>Arcane <br/> Spell <br/> Failure <br/> Chance</th><th>Speed <br/>30ft.</th><th>Speed<br/>20ft.</th><th>Weight</th></tr>
+						<tr><td colspan="12" class="itemType">Light armor</td></tr>
+						<tr>
+							<td><span class="addItem armor"></span></td>
+							<td>
+							</td>
+							<td>
+								<select class="itemModifier">
+									<option value="0">None</option>
+									<option value="1">+1</option>
+									<option value="2">+2</option>
+									<option value="3">+3</option>
+									<option value="4">+4</option>
+									<option value="5">+5</option>
+								</select>
+							</td>
+							<td class="itemName">Padded</td><td>5 gp</td><td>+1</td><td>+8</td><td>0</td><td>5%</td><td>30 ft.</td><td>20 ft.</td><td>10 lbs.</td>
+						</tr>
+						<tr>
+							<td><span class="addItem armor"></span></td>
+							<td>
+								<select class="itemMaterial">
+									<option value="leather">Leather</option>
+									<option value="Dragonhide">Dragonhide</option>
+								</select>
+							</td>
+							<td>
+								<select class="itemModifier">
+									<option value="0">None</option>
+									<option value="1">+1</option>
+									<option value="2">+2</option>
+									<option value="3">+3</option>
+									<option value="4">+4</option>
+									<option value="5">+5</option>
+								</select>
+							</td>
+							<td class="itemName">Leather</td><td>10 gp</td><td>+2</td><td>+6</td><td>0</td><td>10%</td><td>30 ft.</td><td>20 ft.</td><td>15 lbs.</td>
+						</tr>
+						<tr>
+							<td><span class="addItem armor"></span></td>
+							<td>
+								<select class="itemMaterial">
+									<option value="leather">Leather</option>
+									<option value="Dragonhide">Dragonhide</option>
+								</select>
+							</td>
+							<td>
+								<select class="itemModifier">
+									<option value="0">None</option>
+									<option value="1">+1</option>
+									<option value="2">+2</option>
+									<option value="3">+3</option>
+									<option value="4">+4</option>
+									<option value="5">+5</option>
+								</select>
+							</td>
+							<td class="itemName">Studded leather</td><td>25 gp</td><td>+3</td><td>+5</td><td>-1</td><td>15%</td><td>30 ft.</td><td>20 ft.</td><td>20 lbs.</td>
+						</tr>
+						<tr>
+							<td><span class="addItem armor"></span></td>
+							<td>
+								<select class="itemMaterial">
+									<option value="steel">Steel</option>
+									<option value="Adamantine">Adamantine</option>
+									<option value="Cold Iron">Cold Iron</option>
+									<option value="Mithral">Mithral</option>
+								</select>
+							</td>
+							<td>
+								<select class="itemModifier">
+									<option value="0">None</option>
+									<option value="1">+1</option>
+									<option value="2">+2</option>
+									<option value="3">+3</option>
+									<option value="4">+4</option>
+									<option value="5">+5</option>
+								</select>
+							</td>
+							<td class="itemName">Chain shirt</td><td>100 gp</td><td>+4</td><td>+4</td><td>-2</td><td>20%</td><td>30 ft.</td><td>20 ft.</td><td>25 lbs.</td>
+						</tr>
+						<tr><td colspan="12" class="itemType">Medium armor</td></tr>
+						<tr>
+							<td><span class="addItem armor"></span></td>
+							<td>
+								<select class="itemMaterial">
+									<option value="hide">Hide</option>
+									<option value="Dragonhide">Dragonhide</option>
+								</select>
+							</td>
+							<td>
+								<select class="itemModifier">
+									<option value="0">None</option>
+									<option value="1">+1</option>
+									<option value="2">+2</option>
+									<option value="3">+3</option>
+									<option value="4">+4</option>
+									<option value="5">+5</option>
+								</select>
+							</td>
+							<td class="itemName">Hide</td><td>15 gp</td><td>+4</td><td>+4</td><td>-3</td><td>20%</td><td>20 ft.</td><td>15 ft.</td><td>25 lbs.</td>
+						</tr>
+						<tr>
+							<td><span class="addItem armor"></span></td>
+							<td>
+								<select class="itemMaterial">
+									<option value="steel">Steel</option>
+									<option value="Adamantine">Adamantine</option>
+									<option value="Cold Iron">Cold Iron</option>
+									<option value="Mithral">Mithral</option>
+								</select>
+							</td>
+							<td>
+								<select class="itemModifier">
+									<option value="0">None</option>
+									<option value="1">+1</option>
+									<option value="2">+2</option>
+									<option value="3">+3</option>
+									<option value="4">+4</option>
+									<option value="5">+5</option>
+								</select>
+							</td>
+							<td class="itemName">Scale mail</td><td>50 gp</td><td>+5</td><td>+3</td><td>-4</td><td>25%</td><td>20 ft.</td><td>15 ft.</td><td>30 lbs.</td>
+						</tr>
+						<tr>
+							<td><span class="addItem armor"></span></td>
+							<td>
+								<select class="itemMaterial">
+									<option value="steel">Steel</option>
+									<option value="Adamantine">Adamantine</option>
+									<option value="Cold Iron">Cold Iron</option>
+									<option value="Mithral">Mithral</option>
+								</select>
+							</td>
+							<td>
+								<select class="itemModifier">
+									<option value="0">None</option>
+									<option value="1">+1</option>
+									<option value="2">+2</option>
+									<option value="3">+3</option>
+									<option value="4">+4</option>
+									<option value="5">+5</option>
+								</select>
+							</td>
+							<td class="itemName">Chainmail</td><td>150 gp</td><td>+6</td><td>+2</td><td>-5</td><td>30%</td><td>20 ft.</td><td>15 ft.</td><td>40 lbs.</td>
+						</tr>
+						<tr>
+							<td><span class="addItem armor"></span></td>
+							<td>
+								<select class="itemMaterial">
+									<option value="steel">Steel</option>
+									<option value="Adamantine">Adamantine</option>
+									<option value="Cold Iron">Cold Iron</option>
+									<option value="Mithral">Mithral</option>
+								</select>
+							</td>
+							<td>
+								<select class="itemModifier">
+									<option value="0">None</option>
+									<option value="1">+1</option>
+									<option value="2">+2</option>
+									<option value="3">+3</option>
+									<option value="4">+4</option>
+									<option value="5">+5</option>
+								</select>
+							</td>
+							<td class="itemName">Breastplate</td><td>200 gp</td><td>+6</td><td>+3</td><td>-4</td><td>25%</td><td>20 ft.</td><td>15 ft.</td><td>30 lbs.</td>
+						</tr>
+						<tr><td colspan="12" class="itemType">Heavy armor</td></tr>
+						<tr>
+							<td><span class="addItem armor"></span></td>
+							<td>
+								<select class="itemMaterial">
+									<option value="steel">Steel</option>
+									<option value="Adamantine">Adamantine</option>
+									<option value="Cold Iron">Cold Iron</option>
+									<option value="Mithral">Mithral</option>
+								</select>
+							</td>
+							<td>
+								<select class="itemModifier">
+									<option value="0">None</option>
+									<option value="1">+1</option>
+									<option value="2">+2</option>
+									<option value="3">+3</option>
+									<option value="4">+4</option>
+									<option value="5">+5</option>
+								</select>
+							</td>
+							<td class="itemName">Splint mail</td><td>200 gp</td><td>+7</td><td>+0</td><td>-7</td><td>40%</td><td>20 ft.</td><td>15 ft.</td><td>45 lbs.</td>
+						</tr>
+						<tr>
+							<td><span class="addItem armor"></span></td>
+							<td>
+								<select class="itemMaterial">
+									<option value="steel">Steel</option>
+									<option value="Adamantine">Adamantine</option>
+									<option value="Cold Iron">Cold Iron</option>
+									<option value="Mithral">Mithral</option>
+								</select>
+							</td>
+							<td>
+								<select class="itemModifier">
+									<option value="0">None</option>
+									<option value="1">+1</option>
+									<option value="2">+2</option>
+									<option value="3">+3</option>
+									<option value="4">+4</option>
+									<option value="5">+5</option>
+								</select>
+							</td>
+							<td class="itemName">Banded mail</td><td>250 gp</td><td>+7</td><td>+1</td><td>-6</td><td>35%</td><td>20 ft.</td><td>15 ft.</td><td>35 lbs.</td>
+						</tr>
+						<tr>
+							<td><span class="addItem armor"></span></td>
+							<td>
+								<select class="itemMaterial">
+									<option value="steel">Steel</option>
+									<option value="Adamantine">Adamantine</option>
+									<option value="Cold Iron">Cold Iron</option>
+									<option value="Mithral">Mithral</option>
+								</select>
+							</td>
+							<td>
+								<select class="itemModifier">
+									<option value="0">None</option>
+									<option value="1">+1</option>
+									<option value="2">+2</option>
+									<option value="3">+3</option>
+									<option value="4">+4</option>
+									<option value="5">+5</option>
+								</select>
+							</td>
+							<td class="itemName">Half-plate</td><td>600 gp</td><td>+8</td><td>+0</td><td>-7</td><td>40%</td><td>20 ft.</td><td>15 ft.</td><td>50 lbs.</td>
+						</tr>
+						<tr>
+							<td><span class="addItem armor"></span></td>
+							<td>
+								<select class="itemMaterial">
+									<option value="steel">Steel</option>
+									<option value="Adamantine">Adamantine</option>
+									<option value="Cold Iron">Cold Iron</option>
+									<option value="Mithral">Mithral</option>
+								</select>
+							</td>
+							<td>
+								<select class="itemModifier">
+									<option value="0">None</option>
+									<option value="1">+1</option>
+									<option value="2">+2</option>
+									<option value="3">+3</option>
+									<option value="4">+4</option>
+									<option value="5">+5</option>
+								</select>
+							</td>
+							<td class="itemName">Full plate</td><td>1,500 gp</td><td>+9</td><td>+1</td><td>-6</td><td>35%</td><td>20 ft.</td><td>15 ft.</td><td>50 lbs.</td>
+						</tr>
+						<tr><td colspan="12" class="itemType">Shields</td></tr>
+						<tr>
+							<td><span class="addItem armor"></span></td>
+							<td>
+								<select class="itemMaterial">
+									<option value="wood">Wood</option>
+									<option value="Darkwood">Darkwood</option>
+									<option value="Adamantine">Adamantine</option>
+									<option value="Cold Iron">Cold Iron</option>
+									<option value="Dragonhide">Dragonhide</option>
+									<option value="Mithral">Mithral</option>
+									<option value="steel">Steel</option>
+								</select>
+							</td>
+							<td>
+								<select class="itemModifier">
+									<option value="0">None</option>
+									<option value="1">+1</option>
+									<option value="2">+2</option>
+									<option value="3">+3</option>
+									<option value="4">+4</option>
+									<option value="5">+5</option>
+								</select>
+							</td>
+							<td class="itemName">Buckler</td><td>5 gp</td><td>+1</td><td>-</td><td>-1</td><td>5%</td><td>-</td><td>-</td><td>5 lbs.</td>
+						</tr>
+						<tr>
+							<td><span class="addItem armor"></span></td>
+							<td>
+								<select class="itemMaterial">
+									<option value="wood">Wood</option>
+									<option value="Darkwood">Darkwood</option>
+								</select>
+							</td>
+							<td>
+								<select class="itemModifier">
+									<option value="0">None</option>
+									<option value="1">+1</option>
+									<option value="2">+2</option>
+									<option value="3">+3</option>
+									<option value="4">+4</option>
+									<option value="5">+5</option>
+								</select>
+							</td>
+							<td class="itemName">Shield, light wooden</td><td>3 gp</td><td>+1</td><td>-</td><td>-1</td><td>5%</td><td>-</td><td>-</td><td>5 lbs.</td>
+						</tr>
+						<tr>
+							<td><span class="addItem armor"></span></td>
+							<td>
+								<select class="itemMaterial">
+									<option value="steel">Steel</option>
+									<option value="Adamantine">Adamantine</option>
+									<option value="Cold Iron">Cold Iron</option>
+									<option value="Mithral">Mithral</option>
+								</select>
+							</td>
+							<td>
+								<select class="itemModifier">
+									<option value="0">None</option>
+									<option value="1">+1</option>
+									<option value="2">+2</option>
+									<option value="3">+3</option>
+									<option value="4">+4</option>
+									<option value="5">+5</option>
+								</select>
+							</td>
+							<td class="itemName">Shield, light steel</td><td>9 gp</td><td>+1</td><td>-</td><td>-1</td><td>5%</td><td>-</td><td>-</td><td>6 lbs.</td>
+						</tr>
+						<tr>
+							<td><span class="addItem armor"></span></td>
+							<td>
+								<select class="itemMaterial">
+									<option value="wood">Wood</option>
+									<option value="Darkwood">Darkwood</option>
+								</select>
+							</td>
+							<td>
+								<select class="itemModifier">
+									<option value="0">None</option>
+									<option value="1">+1</option>
+									<option value="2">+2</option>
+									<option value="3">+3</option>
+									<option value="4">+4</option>
+									<option value="5">+5</option>
+								</select>
+							</td>
+							<td class="itemName">Shield, heavy wooden</td><td>7 gp</td><td>+2</td><td>-</td><td>-2</td><td>15%</td><td>-</td><td>-</td><td>10 lbs.</td>
+						</tr>
+						<tr>
+							<td><span class="addItem armor"></span></td>
+							<td>
+								<select class="itemMaterial">
+									<option value="steel">Steel</option>
+									<option value="Adamantine">Adamantine</option>
+									<option value="Cold Iron">Cold Iron</option>
+									<option value="Mithral">Mithral</option>
+								</select>
+							</td>
+							<td>
+								<select class="itemModifier">
+									<option value="0">None</option>
+									<option value="1">+1</option>
+									<option value="2">+2</option>
+									<option value="3">+3</option>
+									<option value="4">+4</option>
+									<option value="5">+5</option>
+								</select>
+							</td>
+							<td class="itemName">Shield, heavy steel</td><td>20 gp</td><td>+2</td><td>-</td><td>-2</td><td>15%</td><td>-</td><td>-</td><td>15 lbs.</td>
+						</tr>
+						<tr>
+							<td><span class="addItem armor"></span></td>
+							<td>
+								<select class="itemMaterial">
+									<option value="steel">Steel</option>
+									<option value="Adamantine">Adamantine</option>
+									<option value="Cold Iron">Cold Iron</option>
+									<option value="Mithral">Mithral</option>
+								</select>
+							</td>
+							<td>
+								<select class="itemModifier">
+									<option value="0">None</option>
+									<option value="1">+1</option>
+									<option value="2">+2</option>
+									<option value="3">+3</option>
+									<option value="4">+4</option>
+									<option value="5">+5</option>
+								</select>
+							</td>
+							<td class="itemName">Shield, tower</td><td>30 gp</td><td>+4<sup>3</sup></td><td>+2</td><td>-10</td><td>50%</td><td>-</td><td>-</td><td>45 lbs.</td>
+						</tr>
+						<tr><td colspan="12" class="itemType">Extras</td></tr>
+						<tr>
+							<td><span class="addItem armor"></span></td>
+							<td>
+								<select class="itemMaterial">
+									<option value="steel">Steel</option>
+									<option value="Adamantine">Adamantine</option>
+									<option value="Cold Iron">Cold Iron</option>
+									<option value="Mithral">Mithral</option>
+								</select>
+							</td>
+							<td>
+								<select class="itemModifier">
+									<option value="0">None</option>
+									<option value="1">+1</option>
+									<option value="2">+2</option>
+									<option value="3">+3</option>
+									<option value="4">+4</option>
+									<option value="5">+5</option>
+								</select>
+							</td>
+							<td class="itemName">Armor spikes</td><td>+50 gp</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>+10 lbs.</td>
+						</tr>
+						<tr>
+							<td><span class="addItem armor"></span></td>
+							<td>
+								<select class="itemMaterial">
+									<option value="steel">Steel</option>
+									<option value="Adamantine">Adamantine</option>
+									<option value="Cold Iron">Cold Iron</option>
+									<option value="Mithral">Mithral</option>
+								</select>
+							</td>
+							<td>
+								<select class="itemModifier">
+									<option value="0">None</option>
+									<option value="1">+1</option>
+									<option value="2">+2</option>
+									<option value="3">+3</option>
+									<option value="4">+4</option>
+									<option value="5">+5</option>
+								</select>
+							</td>
+							<td class="itemName">Gauntlet, locked</td><td>8 gp</td><td>-</td><td>-</td><td>special</td><td>n/a</td><td>-</td><td>-</td><td>+5 lbs.</td>
+						</tr>
+						<tr>
+							<td><span class="addItem armor"></span></td>
+							<td>
+								<select class="itemMaterial">
+									<option value="steel">Steel</option>
+									<option value="Adamantine">Adamantine</option>
+									<option value="Cold Iron">Cold Iron</option>
+									<option value="Mithral">Mithral</option>
+								</select>
+							</td>
+							<td>
+								<select class="itemModifier">
+									<option value="0">None</option>
+									<option value="1">+1</option>
+									<option value="2">+2</option>
+									<option value="3">+3</option>
+									<option value="4">+4</option>
+									<option value="5">+5</option>
+								</select>
+							</td>
+							<td class="itemName">Shield spikes</td><td>+10 gp</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>+5 lbs.</td>
+						</tr>
+					</table>
+				</div>
+				<h3><a href="#">Miscellaneous</a></h3>
+				<div>Misc here</div>
+			</div>
+			
+		</div>
+	</div><!--/gear-->
+
+
+
+	<div id="saveAndLoad" class="hidden">
+
+		<div id="savedCharacters">
+		    This should be hidden
+		</div>
+
+		<button type="button" id="createCharacterBttn" title="Create Character">Create Character</button>
+
+		<div id="loadCharacter" class="hidden">
+			Load Character:
+		    <select id="loadList">
+		        <option value=""></option>
+		    </select>
+			<button type="button" id="restoreCharacterBttn" title="Restore Character">Restore Character</button>
+		</div>
+	</div>
+
+
+
+</div> <!--/tab-widget-->
+
+    </form>
+
+  
+</body>
+
+</html>
+

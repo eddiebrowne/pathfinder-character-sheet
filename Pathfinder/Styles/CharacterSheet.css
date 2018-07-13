@@ -1,0 +1,392 @@
+﻿
+
+/* Character Sheet  ----------------------------------------------------------*/
+
+#savedCharacters
+{
+    display:none;
+    visibility:hidden;    
+}
+
+#loadCharacter
+{
+    min-height:40px;
+}
+
+#skillList 
+{
+    border-collapse:collapse;
+}
+
+.sectionHighlight
+{
+    background-color:#E7E7FF;            
+}
+
+.nohighlight
+{
+	background-color:none;
+}
+
+#characterInfo input
+{
+    border-top:none;    
+    border-right:none;
+    border-left:none;
+    border-bottom-color:Black;
+    border-bottom-width:1;
+	width:100px;
+}
+
+div.div-td label
+{
+	margin-left:5px;
+	margin-right:5px;
+	padding:10px;
+	clear:left;
+}
+
+
+div.div-td
+{
+	white-space:nowrap;
+	margin:5px;
+	padding:5px;
+	vertical-align:top;
+}
+
+div.div-td input
+{
+	margin-left:10px;
+	padding:5px;
+}
+
+.div-td select
+{
+	float:left;
+	margin-left:10px;
+	width:115px;
+}
+
+option
+{
+	text-align:right;
+}
+
+div.div-td label
+{
+	display:block;
+	width:95px;
+	float:left;
+	margin-left:10px;
+}
+
+
+/********** INPUT  ************/
+input
+{
+    text-align:center;
+	margin-left:3px;
+}
+
+.smallBox
+{
+    width:30px;
+}
+
+.mediumBox
+{
+    width:50px;
+}
+
+.largeBox
+{
+    width:80px;
+}
+
+.extraLargeBox
+{
+    width:110px;
+}
+
+/*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*/
+
+.hidden
+{    
+    display:none;
+}
+
+.section
+{    
+    min-width:10px;
+	padding: 10px;
+	margin: 10px;
+}
+
+.totalBonus
+{
+	
+}
+
+/*********  Div Table  **********/
+
+.div-table
+{
+	display:table;
+}
+
+.div-td
+{
+	display:table-cell;
+}
+
+.div-tr
+{
+	display:table-row;
+}
+
+/*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*/
+
+table.itemsTable
+{
+	margin-left:auto;
+	margin-right:auto;
+	width:90%;
+	color:black;
+	border-collapse:collapse;
+}
+
+.itemsTable td
+{
+	text-align:center;
+	padding:2px 0 2px 0;
+}
+
+td.itemName
+{
+	font-weight:bold;
+	text-align:left;
+	width:205px;
+	text-indent:5px;
+	margin-right:5px;
+}
+
+th.weaponSpecial
+{
+	width:215px;
+}
+
+select.itemModifier
+{
+	width:75px;
+	margin:0 0 0 5px;
+	padding:0;
+}
+
+select.itemMaterial
+{
+	width:110px;
+	margin:0 0 0 5px;
+	padding:0;
+}
+
+.itemType
+{
+	background-color:black;
+	color:white;
+	text-align:center;
+	font-weight:bold;
+}
+
+#removeColumn
+{
+	width:100px;
+}
+
+#purchasedItems
+{
+	border-collapse:collapse;
+	width:100%;
+}
+
+td.indent
+{
+	text-indent:15px;
+}
+
+#purchasedItems td
+{
+	border-color:rgb(200,200,200);
+	border-width:1px;
+	border-style:solid;
+	text-align:center;
+}
+
+.headerrow th
+{
+	text-align:center;
+	padding:5px;
+	margin:3px;
+}
+
+.readonly
+{
+	background-color: white;
+}
+
+.addItem
+{
+	display:block;
+	width:50px;
+	height:30px;
+	margin-left:10px;
+	margin-right:10px;
+	background-image:url(../Images/buyButton.jpg);
+}
+
+.addItem-pressed
+{
+	display:block;
+	width:50px;
+	height:30px;
+	margin-left:auto;
+	margin-right:auto;
+	background-image:url(../Images/buyButton-pressed.jpg);
+}
+
+.removeItem
+{
+	display:block;
+	width:90px;
+	height:25px;
+	margin-left:auto;
+	margin-right:auto;
+	background-image:url(../Images/removeButton.jpg);
+}
+
+.removeItem-pressed
+{
+	display:block;
+	width:90px;
+	height:25px;
+	margin-left:auto;
+	margin-right:auto;
+	background-image:url(../Images/removeButton-pressed.jpg);
+}
+
+
+.udBttn
+{
+    vertical-align:top;
+    height:22px;
+    width:22px;
+    background-color: Black;
+}
+
+.focus
+{    
+    outline-width: 3px;
+    outline-style: ridge;
+    outline-color:rgb(250,180,0);
+}
+
+.ripple
+{    
+    outline-width: 3px;
+    outline-style: ridge;
+    outline-color:#00FF00;
+}
+
+.error
+{    
+    outline-width: 3px;
+    outline-style: ridge;
+    outline-color:#FF0000;
+}
+
+td
+{
+    white-space:nowrap;    
+    padding:5px;
+    margin:5px;
+}
+
+.skills td input
+{
+    margin-left:auto;    
+    margin-right:auto;    
+}
+
+.upScoreBttn
+{
+    margin-left:3px;
+}
+
+.upAdjBttn
+{
+    margin-left:3px;
+}
+
+.upRankBttn
+{
+    margin-left:3px;
+}
+
+.header
+{
+	display:block;
+	margin-left:auto;
+	margin-right:auto;
+	font-size:large;
+	text-align:center;
+}
+
+.label
+{
+    background-color: Black;            
+    
+    color:White;
+    vertical-align:middle;
+    padding:4px;
+    text-align:center;
+}
+
+.spUnit
+{
+    font-size:8;
+    text-align:right;
+    width:30px;
+	margin:5px;
+	padding:5px;
+}
+
+.columnHead
+{
+    width:75px;
+}
+
+table
+{
+    margin:5px;
+    padding:5px;    
+}
+
+body 
+{
+	font-size: 75%;
+	color: #222;
+	background: #ffffff;
+	font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+	line-height: 1.6em;
+}
+
+.tab-widget 
+{
+	margin: 20px;
+	padding: 10px;
+	background-color:hsl(200, 90%, 60%);
+	border: 1px solid #dedbd1;
+	margin-bottom: 15px;
+	/*width:60%;*/
+}
+
